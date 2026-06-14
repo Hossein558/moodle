@@ -17,9 +17,13 @@
 /**
  * Moodle 404 Error page
  *
- * This is for 404 error pages served by the webserver and then passed
- * to Moodle to be rendered using the site theme.
+ * This script serves as the global 404 error handler for the Moodle application.
+ * It is typically configured in the webserver (e.g., Apache via ErrorDocument 404 /error/index.php)
+ * to intercept 404 Not Found HTTP errors. The error is then passed to Moodle, allowing it to be
+ * dynamically rendered using the active Moodle site theme and current language settings,
+ * maintaining a consistent user experience.
  *
+ * Example webserver configuration:
  * ErrorDocument 404 /error/index.php
  *
  * @package    core

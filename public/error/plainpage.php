@@ -17,13 +17,19 @@
 /**
  * Moodle Generic plain page
  *
- * This is used for various pages, usually errors, early in the Moodle
- * bootstrap. It can be safetly customized by editing this file directly
- * but it MUST NOT contain any Moodle resources such as theme files generated
- * by php, it can only contain references to static css and images, and as a
- * precaution its recommended that everything is inlined rather than
- * references. This is why this file is located here as it cannot be inside
- * a Moodle theme.
+ * This generic plain HTML page template is utilized for displaying various early-stage
+ * bootstrap pages and critical system errors before Moodle's full rendering engine
+ * or theming system is initialized.
+ *
+ * It acts as a fail-safe layout for scenarios like database connection failures,
+ * unhandled early exceptions, or maintenance mode messages.
+ *
+ * It can be safely customized by editing this file directly. However, it MUST NOT contain
+ * any dynamically generated Moodle resources (like PHP-generated theme files). It should
+ * only contain references to static CSS and images. As a precaution to ensure the page
+ * loads regardless of network or site state, it is recommended that everything (CSS/JS)
+ * is inlined rather than referenced externally. This independent nature is why this file
+ * is located in the global `/error/` directory rather than within a specific Moodle theme.
  *
  * @package    core
  * @copyright  2020 Brendan Heywood <brendan@catalyst-au.net>
