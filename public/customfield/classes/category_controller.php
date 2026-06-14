@@ -27,7 +27,11 @@ namespace core_customfield;
 defined('MOODLE_INTERNAL') || die;
 
 /**
- * Class category
+ * Class category_controller
+ *
+ * This class serves as a controller for custom field categories.
+ * It manages the creation, retrieval, and manipulation of category records
+ * within the custom field system.
  *
  * @package core_customfield
  * @copyright 2018 Toni Barbera <toni@moodle.com>

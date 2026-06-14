@@ -1725,7 +1725,11 @@ function course_overviewfiles_options($course) {
 }
 
 /**
- * Create a course and either return a $course object
+ * Create a course and either return a $course object.
+ *
+ * This function creates a new course based on the provided data.
+ * It performs necessary validations, sets up default values, and inserts the
+ * course record into the database. It also handles associated events and context setup.
  *
  * Please note this functions does not verify any access control,
  * the calling code is responsible for all validation (usually it is the form definition).
