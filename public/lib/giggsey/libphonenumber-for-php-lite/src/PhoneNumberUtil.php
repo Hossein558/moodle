@@ -21,6 +21,10 @@ use TypeError;
  * http://www.unicode.org/cldr/charts/30/supplemental/territory_information.html
  * @phpstan-consistent-constructor
  * @no-named-arguments
+ *
+ * Moodle Integration: Utility for parsing, formatting, and validating international phone numbers.
+ * Provided by the giggsey/libphonenumber-for-php-lite library. Moodle uses this for
+ * user profile fields and plugins requiring standardized phone number formats (e.g., SMS plugins).
  */
 class PhoneNumberUtil
 {

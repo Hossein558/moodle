@@ -16,6 +16,10 @@ use Psr\Http\Message\RequestInterface;
 
 /**
  * Default AWS client implementation
+ *
+ * Moodle Integration: Represents a generic AWS client for various AWS services.
+ * This client is part of the integrated aws-sdk-php library and is used by Moodle
+ * plugins (e.g., repository_s3, tool_aws) for interacting with AWS APIs.
  */
 class AwsClient implements AwsClientInterface
 {
