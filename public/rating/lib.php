@@ -15,7 +15,10 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * A class representing a single rating and containing some static methods for manipulating ratings
+ * A class representing a single rating and containing some static methods for manipulating ratings within the Grading & Assessment Framework.
+ *
+ * This class handles rating logic used across various activities (e.g., forums, glossaries)
+ * allowing for aggregations such as average, count, max, min, and sum.
  *
  * @package    core_rating
  * @subpackage rating
