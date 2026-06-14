@@ -15,7 +15,11 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Throw an exception when users try to access index.php outside of the web root.
+ * Safeguard against direct access to the root directory outside of the public webroot.
+ *
+ * This file throws an exception when users try to access index.php directly from
+ * the root directory instead of the public web directory. It acts as a security
+ * measure to prevent execution of files outside the intended web root.
  *
  * @package    core
  * @copyright  Andrew Lyons <andrew@nicols.co.uk>
