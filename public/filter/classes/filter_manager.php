@@ -25,6 +25,10 @@ use moodle_page;
  * only used by weblib.php. Client code should probably be using the
  * format_text and format_string functions.
  *
+ * This class orchestrates how `text_filter` plugins are loaded and applies
+ * them sequentially (in a chain) onto pieces of text or strings based on the
+ * context execution requirements.
+ *
  * This class is a singleton.
  *
  * @package core_filters
@@ -154,6 +158,10 @@ class filter_manager {
 
     /**
      * Apply a list of filters to some content.
+     *
+     * Iterates through the given filter chain and executes the relevant stage method
+     * on each filter sequentially (e.g. `filter`, `filter_stage_pre_format`).
+     *
      * @param string $text
      * @param text_filter[] $filterchain array filter name => filter object.
      * @param array $options options passed to the filters.

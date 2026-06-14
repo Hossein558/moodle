@@ -27,6 +27,9 @@ namespace core_contentbank;
 /**
  * Helper class for the content bank.
  *
+ * Provides utility methods to prepare page contexts, navigation, and layout
+ * for content bank pages (e.g. course contexts, category contexts).
+ *
  * @package    core_contentbank
  * @copyright  2020 Amaia Anabitarte <amaia@moodle.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -35,6 +38,9 @@ class helper {
 
     /**
      * Getting content bank page ready for the breadcrumbs.
+     *
+     * Sets the context, heading, active tabs, layout, and populates the navigation
+     * bar based on whether the context is a course, course category, or system.
      *
      * @param \context $context Context of the current page.
      * @param string $title Title of the current page.

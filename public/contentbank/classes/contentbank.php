@@ -21,7 +21,11 @@ use stored_file;
 use context;
 
 /**
- * Content bank class
+ * Content bank manager class.
+ *
+ * This class acts as the main entry point to retrieve, create, search,
+ * and manage content within the content bank. It bridges the gap between
+ * the core system and the individual contenttype plugins.
  *
  * @package    core_contentbank
  * @copyright  2020 Amaia Anabitarte <amaia@moodle.com>
@@ -253,10 +257,14 @@ class contentbank {
     /**
      * Create content from a file information.
      *
+     * This method resolves the plugin that supports the given file extension,
+     * instantiates the contenttype class, and handles the file upload to
+     * create a new contentbank content record.
+     *
      * @param \context $context Context where to upload the file and content.
      * @param int $userid Id of the user uploading the file.
      * @param stored_file $file The file to get information from
-     * @return content
+     * @return content|null The created content or null if the creation failed.
      */
     public function create_content_from_file(\context $context, int $userid, stored_file $file): ?content {
         global $USER;
@@ -323,6 +331,9 @@ class contentbank {
 
     /**
      * Get the list of content types that have the requested feature.
+     *
+     * This iterates over all content types (or just enabled ones) and dynamically
+     * calls the capability checks (e.g. `can_upload`, `can_edit`) defined in the contenttype class.
      *
      * @param string $feature Feature code e.g CAN_UPLOAD.
      * @param null|\context $context Optional context to check the permission to use the feature.

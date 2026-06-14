@@ -23,7 +23,12 @@ use stored_file;
 use moodle_url;
 
 /**
- * Content type manager class
+ * Content type manager abstract class.
+ *
+ * This abstract class outlines the base functionality for any content type
+ * plugin in the content bank. It handles common operations like creation,
+ * uploading, downloading, and replacing content, and provides capability
+ * checks (e.g. `can_upload`, `can_edit`) that can be extended by specific plugins.
  *
  * @package    core_contentbank
  * @copyright  2020 Amaia Anabitarte <amaia@moodle.com>
@@ -142,6 +147,8 @@ abstract class contenttype {
 
     /**
      * Delete this content from the content_bank.
+     *
+     * This removes the database entry and any associated files.
      * This method can be overwritten by the plugins if they need to delete specific information.
      *
      * @param  content $content The content to delete.
@@ -290,6 +297,8 @@ abstract class contenttype {
 
     /**
      * Returns user has access capability for the main content bank and the content itself (base on is_access_allowed from plugin).
+     *
+     * This checks both the global content bank capability and the plugin-specific access capability.
      *
      * @return bool     True if content could be accessed. False otherwise.
      */
