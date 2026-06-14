@@ -29,6 +29,9 @@ use core_communication\processor;
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class create_and_configure_room_task extends adhoc_task {
+    /**
+     * Executes the scheduled task to create and configure a communication room in the external provider.
+     */
     public function execute() {
         $data = $this->get_custom_data();
 

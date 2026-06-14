@@ -38,6 +38,9 @@ class sms_gateway_status extends external_api {
         ]);
     }
 
+    /**
+     * Executes the external API to retrieve the current status of an SMS gateway.
+     */
     public static function execute(int $plugin, int $state): array {
         // Parameter validation.
         [

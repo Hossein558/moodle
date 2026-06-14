@@ -61,6 +61,11 @@ class processor implements templatable, renderable {
         $this->user = $user;
     }
 
+    /**
+     * Exports the processor data for template rendering.
+     * @param \renderer_base $output The renderer base.
+     * @return array Template context data.
+     */
     public function export_for_template(\renderer_base $output) {
         $processor = $this->processor;
         $user = $this->user;

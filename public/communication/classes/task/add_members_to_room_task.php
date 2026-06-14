@@ -27,6 +27,9 @@ use core_communication\processor;
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class add_members_to_room_task extends adhoc_task {
+    /**
+     * Executes the scheduled task to add members to a communication room.
+     */
     public function execute() {
         // Initialize the custom data operation to be used for the action.
         $data = $this->get_custom_data();

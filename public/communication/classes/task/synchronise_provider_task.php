@@ -28,6 +28,9 @@ use core_communication\processor;
  */
 class synchronise_provider_task extends adhoc_task {
 
+    /**
+     * Executes the scheduled task to synchronise data for a specific communication provider.
+     */
     public function execute() {
         $data = $this->get_custom_data();
 
