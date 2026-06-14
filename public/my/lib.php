@@ -314,6 +314,14 @@ function my_reset_page_for_all_users(
     }
 }
 
+/**
+ * Custom block manager for the system pages, so that it loads blocks
+ * using the system context rather than the user's context.
+ *
+ * @package    core_my
+ * @copyright  2010 Remote-Learner.net
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 class my_syspage_block_manager extends block_manager {
     // HACK WARNING!
     // TODO: figure out a better way to do this
