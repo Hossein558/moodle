@@ -33,6 +33,14 @@ class HTMLPurifier_URIScheme_rtsp extends HTMLPurifier_URIScheme {
     public $browsable = true;
     public $hierarchical = true;
 
+    /**
+     * Validates the URI scheme.
+     *
+     * @param HTMLPurifier_URI $uri Reference to a HTMLPurifier_URI object
+     * @param HTMLPurifier_Config $config HTMLPurifier_Config object
+     * @param HTMLPurifier_Context $context HTMLPurifier_Context object
+     * @return bool true if validation passes
+     */
     public function doValidate(&$uri, $config, $context) {
         $uri->userinfo = null;
         return true;
@@ -49,6 +57,14 @@ class HTMLPurifier_URIScheme_rtmp extends HTMLPurifier_URIScheme {
     public $browsable = false;
     public $hierarchical = true;
 
+    /**
+     * Validates the URI scheme.
+     *
+     * @param HTMLPurifier_URI $uri Reference to a HTMLPurifier_URI object
+     * @param HTMLPurifier_Config $config HTMLPurifier_Config object
+     * @param HTMLPurifier_Context $context HTMLPurifier_Context object
+     * @return bool true if validation passes
+     */
     public function doValidate(&$uri, $config, $context) {
         $uri->userinfo = null;
         return true;
@@ -65,6 +81,14 @@ class HTMLPurifier_URIScheme_irc extends HTMLPurifier_URIScheme {
     public $browsable = true;
     public $hierarchical = true;
 
+    /**
+     * Validates the URI scheme.
+     *
+     * @param HTMLPurifier_URI $uri Reference to a HTMLPurifier_URI object
+     * @param HTMLPurifier_Config $config HTMLPurifier_Config object
+     * @param HTMLPurifier_Context $context HTMLPurifier_Context object
+     * @return bool true if validation passes
+     */
     public function doValidate(&$uri, $config, $context) {
         $uri->userinfo = null;
         return true;
@@ -81,6 +105,14 @@ class HTMLPurifier_URIScheme_mms extends HTMLPurifier_URIScheme {
     public $browsable = true;
     public $hierarchical = true;
 
+    /**
+     * Validates the URI scheme.
+     *
+     * @param HTMLPurifier_URI $uri Reference to a HTMLPurifier_URI object
+     * @param HTMLPurifier_Config $config HTMLPurifier_Config object
+     * @param HTMLPurifier_Context $context HTMLPurifier_Context object
+     * @return bool true if validation passes
+     */
     public function doValidate(&$uri, $config, $context) {
         $uri->userinfo = null;
         return true;
@@ -97,6 +129,14 @@ class HTMLPurifier_URIScheme_gopher extends HTMLPurifier_URIScheme {
     public $browsable = true;
     public $hierarchical = true;
 
+    /**
+     * Validates the URI scheme.
+     *
+     * @param HTMLPurifier_URI $uri Reference to a HTMLPurifier_URI object
+     * @param HTMLPurifier_Config $config HTMLPurifier_Config object
+     * @param HTMLPurifier_Context $context HTMLPurifier_Context object
+     * @return bool true if validation passes
+     */
     public function doValidate(&$uri, $config, $context) {
         $uri->userinfo = null;
         return true;
@@ -113,6 +153,14 @@ class HTMLPurifier_URIScheme_teamspeak extends HTMLPurifier_URIScheme {
     public $browsable = true;
     public $hierarchical = true;
 
+    /**
+     * Validates the URI scheme.
+     *
+     * @param HTMLPurifier_URI $uri Reference to a HTMLPurifier_URI object
+     * @param HTMLPurifier_Config $config HTMLPurifier_Config object
+     * @param HTMLPurifier_Context $context HTMLPurifier_Context object
+     * @return bool true if validation passes
+     */
     public function doValidate(&$uri, $config, $context) {
         $uri->userinfo = null;
         return true;
