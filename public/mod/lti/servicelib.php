@@ -35,6 +35,15 @@ define('LTI_ITEM_TYPE', 'mod');
 define('LTI_ITEM_MODULE', 'lti');
 define('LTI_SOURCE', 'mod/lti');
 
+/**
+ * Constructs an XML response for LTI service requests.
+ *
+ * @param string $codemajor The major status code.
+ * @param string $description A description of the status.
+ * @param string $messageref The reference ID of the message.
+ * @param string $messagetype The message type.
+ * @return string The XML response.
+ */
 function lti_get_response_xml($codemajor, $description, $messageref, $messagetype) {
     $xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><imsx_POXEnvelopeResponse />');
     $xml->addAttribute('xmlns', 'http://www.imsglobal.org/services/ltiv1p1/xsd/imsoms_v1p0');
@@ -57,6 +66,12 @@ function lti_get_response_xml($codemajor, $description, $messageref, $messagetyp
     return $xml;
 }
 
+/**
+ * Parses the message ID from an LTI XML request.
+ *
+ * @param SimpleXMLElement $xml The parsed XML request.
+ * @return string|null The message ID.
+ */
 function lti_parse_message_id($xml) {
     if (empty($xml->imsx_POXHeader)) {
         return '';
@@ -68,6 +83,12 @@ function lti_parse_message_id($xml) {
     return $messageid;
 }
 
+/**
+ * Parses a replaceResult request from an LTI grade service call.
+ *
+ * @param SimpleXMLElement $xml The parsed XML request.
+ * @return object The parsed grade data.
+ */
 function lti_parse_grade_replace_message($xml) {
     $node = $xml->imsx_POXBody->replaceResultRequest->resultRecord->sourcedGUID->sourcedId;
     $resultjson = json_decode((string)$node);
@@ -99,6 +120,12 @@ function lti_parse_grade_replace_message($xml) {
     return $parsed;
 }
 
+/**
+ * Parses a readResult request from an LTI grade service call.
+ *
+ * @param SimpleXMLElement $xml The parsed XML request.
+ * @return object The parsed read request data.
+ */
 function lti_parse_grade_read_message($xml) {
     $node = $xml->imsx_POXBody->readResultRequest->resultRecord->sourcedGUID->sourcedId;
     $resultjson = json_decode((string)$node);
@@ -118,6 +145,12 @@ function lti_parse_grade_read_message($xml) {
     return $parsed;
 }
 
+/**
+ * Parses a deleteResult request from an LTI grade service call.
+ *
+ * @param SimpleXMLElement $xml The parsed XML request.
+ * @return object The parsed delete request data.
+ */
 function lti_parse_grade_delete_message($xml) {
     $node = $xml->imsx_POXBody->deleteResultRequest->resultRecord->sourcedGUID->sourcedId;
     $resultjson = json_decode((string)$node);
@@ -137,6 +170,12 @@ function lti_parse_grade_delete_message($xml) {
     return $parsed;
 }
 
+/**
+ * Determines whether a specific LTI instance is configured to accept grades.
+ *
+ * @param object $ltiinstance The LTI instance.
+ * @return bool True if grades are accepted.
+ */
 function lti_accepts_grades($ltiinstance) {
     global $DB;
 
@@ -173,6 +212,15 @@ function lti_set_session_user($userid) {
     }
 }
 
+/**
+ * Updates a user's grade for an LTI instance.
+ *
+ * @param object $ltiinstance The LTI instance.
+ * @param int $userid The user ID.
+ * @param float $gradeval The grade value.
+ * @param string $launchid The launch ID.
+ * @return bool True on success.
+ */
 function lti_update_grade($ltiinstance, $userid, $launchid, $gradeval) {
     global $CFG, $DB;
     require_once($CFG->libdir . '/gradelib.php');
@@ -219,6 +267,13 @@ function lti_update_grade($ltiinstance, $userid, $launchid, $gradeval) {
     return $status == GRADE_UPDATE_OK;
 }
 
+/**
+ * Reads a user's grade for an LTI instance.
+ *
+ * @param object $ltiinstance The LTI instance.
+ * @param int $userid The user ID.
+ * @return float|null The user's grade.
+ */
 function lti_read_grade($ltiinstance, $userid) {
     global $CFG;
     require_once($CFG->libdir . '/gradelib.php');
@@ -237,6 +292,13 @@ function lti_read_grade($ltiinstance, $userid) {
     }
 }
 
+/**
+ * Deletes a user's grade for an LTI instance.
+ *
+ * @param object $ltiinstance The LTI instance.
+ * @param int $userid The user ID.
+ * @return bool True on success.
+ */
 function lti_delete_grade($ltiinstance, $userid) {
     global $CFG;
     require_once($CFG->libdir . '/gradelib.php');
@@ -250,6 +312,15 @@ function lti_delete_grade($ltiinstance, $userid) {
     return $status == GRADE_UPDATE_OK;
 }
 
+/**
+ * Verifies the OAuth signature of an incoming LTI service message.
+ *
+ * @param string $key The consumer key.
+ * @param array $sharedsecrets An array of shared secrets to check against.
+ * @param string $body The raw body of the request.
+ * @param array|null $headers The HTTP headers.
+ * @return bool True if the signature is valid.
+ */
 function lti_verify_message($key, $sharedsecrets, $body, $headers = null) {
     foreach ($sharedsecrets as $secret) {
         $signaturefailed = false;

@@ -48,6 +48,12 @@ class page_content_file_info extends file_info_stored {
     }
 }
 
+/**
+ * Retrieves the options for the text editor used in the page module.
+ *
+ * @param context $context The context of the page.
+ * @return array Editor options.
+ */
 function page_get_editor_options($context) {
     global $CFG;
     return array('subdirs'=>1, 'maxbytes'=>$CFG->maxbytes, 'maxfiles'=>-1, 'changeformat'=>1, 'context'=>$context, 'noclean'=>1, 'trusttext'=>0);

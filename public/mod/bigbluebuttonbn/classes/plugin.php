@@ -24,6 +24,9 @@ namespace mod_bigbluebuttonbn;
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  * @author    Darko Miletic  (darko.miletic [at] gmail [dt] com)
  */
+/**
+ * Handles plugin-level configurations and interactions for BigBlueButtonBN.
+ */
 abstract class plugin {
 
     /**

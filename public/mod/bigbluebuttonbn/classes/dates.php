@@ -28,6 +28,9 @@ use core\activity_dates;
  * @copyright  2025 Laurent David <laurent.david@moodle.com>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+/**
+ * Fetches important dates for a given BigBlueButtonBN module instance.
+ */
 class dates extends activity_dates {
     /**
      * Returns the activity due date.

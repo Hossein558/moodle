@@ -32,6 +32,9 @@ use stdClass;
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  * @author    Laurent David (laurent@call-learning.fr)
  */
+/**
+ * Defines custom completion rules for the BigBlueButtonBN activity.
+ */
 class custom_completion extends activity_custom_completion {
 
     /**

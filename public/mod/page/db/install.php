@@ -30,6 +30,11 @@
 
 defined('MOODLE_INTERNAL') || die;
 
+/**
+ * Install hook for the Page module.
+ *
+ * @return void
+ */
 function xmldb_page_install() {
     global $CFG;
 

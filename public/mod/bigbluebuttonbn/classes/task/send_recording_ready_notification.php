@@ -25,6 +25,9 @@ use html_writer;
  * @copyright 2021 Andrew Lyons <andrew@nicols.co.uk>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+/**
+ * Adhoc task to send a notification when a recording is ready.
+ */
 class send_recording_ready_notification extends base_send_notification {
     /**
      * Get the notification type.

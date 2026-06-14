@@ -51,6 +51,9 @@ defined('MOODLE_INTERNAL') || die;
 require_once($CFG->dirroot.'/course/moodleform_mod.php');
 require_once($CFG->dirroot.'/mod/lti/locallib.php');
 
+/**
+ * Form definition for adding or editing an LTI instance.
+ */
 class mod_lti_mod_form extends moodleform_mod {
 
     /** @var int the tool typeid, or 0 if the instance form is being created for a manually configured tool instance.*/

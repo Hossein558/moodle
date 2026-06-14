@@ -81,6 +81,15 @@ function get_oauth_key_from_headers($typeid = null, $scopes = null) {
     return false;
 }
 
+/**
+ * Verifies the OAuth signature for a POST request with a raw body.
+ *
+ * @param string $oauth_consumer_key The consumer key.
+ * @param string $oauth_consumer_secret The consumer secret.
+ * @param string $body The raw request body.
+ * @param array|null $request_headers The HTTP headers.
+ * @return bool True if valid.
+ */
 function handle_oauth_body_post($oauthconsumerkey, $oauthconsumersecret, $body, $requestheaders = null) {
 
     if ($requestheaders == null) {

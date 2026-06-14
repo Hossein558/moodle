@@ -28,6 +28,9 @@ defined('MOODLE_INTERNAL') || die;
 require_once ($CFG->dirroot.'/course/moodleform_mod.php');
 require_once($CFG->dirroot.'/mod/url/locallib.php');
 
+/**
+ * Form definition for adding or editing a URL instance.
+ */
 class mod_url_mod_form extends moodleform_mod {
     function definition() {
         global $CFG, $DB;

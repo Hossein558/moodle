@@ -1705,6 +1705,13 @@ function lti_convert_content_items($param) {
     return json_encode($newitems);
 }
 
+/**
+ * Generates an HTML table displaying LTI tools.
+ *
+ * @param array $tools List of tools.
+ * @param string $id The HTML ID attribute.
+ * @return void Output is echoed.
+ */
 function lti_get_tool_table($tools, $id) {
     global $OUTPUT;
     $html = '';
@@ -2231,12 +2238,28 @@ function lti_get_type_config($typeid) {
     return $typeconfig;
 }
 
+/**
+ * Retrieves LTI tools matching a specific URL.
+ *
+ * @param string $url The URL to match.
+ * @param int $state The state of the tools to retrieve.
+ * @param int|null $courseid The ID of the course, or null for site-wide.
+ * @return array A list of matching tools.
+ */
 function lti_get_tools_by_url($url, $state, $courseid = null) {
     $domain = lti_get_domain_from_url($url);
 
     return lti_get_tools_by_domain($domain, $state, $courseid);
 }
 
+/**
+ * Retrieves LTI tools matching a specific domain.
+ *
+ * @param string $domain The domain to match.
+ * @param int $state The state of the tools to retrieve.
+ * @param int|null $courseid The ID of the course.
+ * @return array A list of matching tools.
+ */
 function lti_get_tools_by_domain($domain, $state = null, $courseid = null) {
     global $DB, $SITE;
 
@@ -2395,6 +2418,12 @@ function lti_get_configured_types($courseid, $sectionreturn = 0) {
     return $types;
 }
 
+/**
+ * Extracts the domain from a given URL.
+ *
+ * @param string $url The URL.
+ * @return string The extracted domain.
+ */
 function lti_get_domain_from_url($url) {
     $matches = array();
 
@@ -2403,12 +2432,26 @@ function lti_get_domain_from_url($url) {
     }
 }
 
+/**
+ * Finds the best matching LTI tool for a given URL.
+ *
+ * @param string $url The URL to match.
+ * @param int|null $courseid The ID of the course.
+ * @param int $state The state of the tools to consider.
+ * @return object|null The matching tool or null.
+ */
 function lti_get_tool_by_url_match($url, $courseid = null, $state = LTI_TOOL_STATE_CONFIGURED) {
     $possibletools = lti_get_tools_by_url($url, $state, $courseid);
 
     return lti_get_best_tool_by_url($url, $possibletools, $courseid);
 }
 
+/**
+ * Generates a thumbprint for a URL to facilitate matching.
+ *
+ * @param string $url The URL.
+ * @return string The URL thumbprint.
+ */
 function lti_get_url_thumbprint($url) {
     // Parse URL requires a schema otherwise everything goes into 'path'.  Fixed 5.4.7 or later.
     if (preg_match('/https?:\/\//', $url) !== 1) {
@@ -2440,6 +2483,14 @@ function lti_get_url_thumbprint($url) {
     return $urllower;
 }
 
+/**
+ * Selects the best matching tool from a list based on a URL.
+ *
+ * @param string $url The URL to match.
+ * @param array $tools The list of tools.
+ * @param int|null $courseid The ID of the course.
+ * @return object|null The best matching tool.
+ */
 function lti_get_best_tool_by_url($url, $tools, $courseid = null) {
     if (count($tools) === 0) {
         return null;
@@ -2486,6 +2537,12 @@ function lti_get_best_tool_by_url($url, $tools, $courseid = null) {
     return $bestmatch;
 }
 
+/**
+ * Retrieves shared secrets associated with a given consumer key.
+ *
+ * @param string $key The consumer key.
+ * @return array A list of shared secrets.
+ */
 function lti_get_shared_secrets_by_key($key) {
     global $DB;
 
@@ -2545,6 +2602,13 @@ function lti_delete_type($id) {
     $DB->delete_records('lti_types_categories', array('typeid' => $id));
 }
 
+/**
+ * Sets the state (e.g., configured, pending, rejected) for an LTI tool type.
+ *
+ * @param int $id The ID of the tool type.
+ * @param int $state The new state.
+ * @return bool True on success.
+ */
 function lti_set_state_for_type($id, $state) {
     global $DB;
 
@@ -2746,6 +2810,13 @@ function lti_get_type_type_config($id) {
     return $type;
 }
 
+/**
+ * Prepares an LTI tool type object and its configuration for saving to the DB.
+ *
+ * @param object $type The tool type object.
+ * @param object|array $config The configuration data.
+ * @return void
+ */
 function lti_prepare_type_for_save($type, $config) {
     if (isset($config->lti_toolurl)) {
         $type->baseurl = $config->lti_toolurl;
@@ -2809,6 +2880,13 @@ function lti_prepare_type_for_save($type, $config) {
     unset ($config->lti_secureicon);
 }
 
+/**
+ * Updates an existing LTI tool type and its configuration in the database.
+ *
+ * @param object $type The tool type object containing new data.
+ * @param object|array $config The configuration data.
+ * @return bool True on success.
+ */
 function lti_update_type($type, $config) {
     global $DB, $CFG;
 
@@ -2889,6 +2967,13 @@ function lti_type_add_categories(int $typeid, string $lticoursecategories = ''):
     }
 }
 
+/**
+ * Adds a new LTI tool type and its configuration to the database.
+ *
+ * @param object $type The tool type object.
+ * @param object|array $config The configuration data.
+ * @return int The ID of the newly created tool type.
+ */
 function lti_add_type($type, $config) {
     global $USER, $SITE, $DB;
 
@@ -3672,12 +3757,25 @@ function lti_build_login_request($courseid, $cmid, $instance, $config, $messaget
     return $params;
 }
 
+/**
+ * Retrieves an LTI tool type by its ID.
+ *
+ * @param int $typeid The ID of the tool type.
+ * @return object|bool The tool type object, or false if not found.
+ */
 function lti_get_type($typeid) {
     global $DB;
 
     return $DB->get_record('lti_types', array('id' => $typeid));
 }
 
+/**
+ * Determines the launch container (e.g., embed, new window) for an LTI tool.
+ *
+ * @param object $lti The LTI instance.
+ * @param array $toolconfig The tool configuration.
+ * @return int The launch container constant.
+ */
 function lti_get_launch_container($lti, $toolconfig) {
     if (empty($lti->launchcontainer)) {
         $lti->launchcontainer = LTI_LAUNCH_CONTAINER_DEFAULT;
@@ -3707,11 +3805,22 @@ function lti_get_launch_container($lti, $toolconfig) {
     return $launchcontainer;
 }
 
+/**
+ * Checks whether the current request is using SSL/HTTPS.
+ *
+ * @return bool True if SSL is being used.
+ */
 function lti_request_is_using_ssl() {
     global $CFG;
     return (stripos($CFG->wwwroot, 'https://') === 0);
 }
 
+/**
+ * Ensures a URL uses the HTTPS protocol.
+ *
+ * @param string $url The URL to process.
+ * @return string The URL with HTTPS scheme.
+ */
 function lti_ensure_url_is_https($url) {
     if (!strstr($url, '://')) {
         $url = 'https://' . $url;

@@ -29,6 +29,9 @@ use stdClass;
  * @copyright 2023 onwards, Blindside Networks Inc
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+/**
+ * Abstract base class for notification tasks in BBB.
+ */
 abstract class base_send_notification extends adhoc_task {
 
     /** @var instance */

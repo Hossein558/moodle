@@ -24,6 +24,9 @@ use stdClass;
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  * @author    Laurent David (laurent@call-learning.fr)
  */
+/**
+ * Helper class for dealing with extension instance save/update/delete operations.
+ */
 class mod_instance_helper {
     /**
      * Runs any processes that must run before a bigbluebuttonbn insert/update.
