@@ -351,9 +351,9 @@ function quiz_start_attempt_built_on_last($quba, $attempt, $lastattempt) {
  * to IN_PROGRESS and the timestart updated. If it does not already exist, a new record will be created
  * already in the IN_PROGRESS state.
  *
- * @param quiz_settings $quizobj
- * @param question_usage_by_activity $quba
- * @param stdClass                     $attempt
+ * @param quiz_settings $quizobj The quiz settings object.
+ * @param question_usage_by_activity $quba The question usage by activity.
+ * @param stdClass                     $attempt The attempt object.
  * @param ?int $timenow The time to use for the attempt's timestart property. Defaults to time().
  * @return stdClass                    attempt object with uniqueid and id set.
  */
@@ -440,13 +440,12 @@ function quiz_attempt_save_not_started(question_usage_by_activity $quba, stdClas
 }
 
 /**
- * Returns an unfinished attempt (if there is one) for the given
- * user on the given quiz. This function does not return preview attempts.
+ * Returns an unfinished attempt for the given user on the given quiz, if any.
+ * This function does not return preview attempts.
  *
  * @param int $quizid the id of the quiz.
  * @param int $userid the id of the user.
- *
- * @return mixed the unfinished attempt if there is one, false if not.
+ * @return stdClass|false the unfinished attempt, or false if not found.
  */
 function quiz_get_user_attempt_unfinished($quizid, $userid) {
     $attempts = quiz_get_user_attempts($quizid, $userid, 'unfinished', true);
@@ -459,8 +458,8 @@ function quiz_get_user_attempt_unfinished($quizid, $userid) {
 
 /**
  * Delete a quiz attempt.
- * @param mixed $attempt an integer attempt id or an attempt object
- *      (row of the quiz_attempts table).
+ *
+ * @param mixed $attempt an integer attempt id or an attempt object (row of the quiz_attempts table).
  * @param stdClass $quiz the quiz object.
  */
 function quiz_delete_attempt($attempt, $quiz) {
@@ -535,6 +534,8 @@ function quiz_delete_previews($quiz, $userid = null) {
 }
 
 /**
+ * Checks if a quiz has any attempts.
+ *
  * @param int $quizid The quiz id.
  * @return bool whether this quiz has any (non-preview) attempts.
  */
@@ -546,7 +547,8 @@ function quiz_has_attempts($quizid) {
 // Functions to do with quiz layout and pages //////////////////////////////////
 
 /**
- * Repaginate the questions in a quiz
+ * Repaginates the questions in a quiz.
+ *
  * @param int $quizid the id of the quiz to repaginate.
  * @param int $slotsperpage number of items to put on each page. 0 means unlimited.
  */
