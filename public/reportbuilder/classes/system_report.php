@@ -32,6 +32,8 @@ use core_reportbuilder\local\report\column;
 /**
  * Base class for system reports
  *
+ * Provides the core structure and parameter handling for predefined system reports.
+ *
  * @package     core_reportbuilder
  * @copyright   2020 Paul Holden <paulh@moodle.com>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later

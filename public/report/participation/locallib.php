@@ -25,6 +25,8 @@
 defined('MOODLE_INTERNAL') || die();
 
 /**
+ * Returns the log table name.
+ *
  * Returns log table name of preferred reader, if leagcy then return empty string.
  *
  * @return string table name

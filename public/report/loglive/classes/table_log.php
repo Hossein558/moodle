@@ -26,6 +26,8 @@ defined('MOODLE_INTERNAL') || die;
 require_once($CFG->libdir . '/tablelib.php');
 
 /**
+ * Handles the display and querying of live log data.
+ *
  * Table log class for displaying logs.
  *
  * @since      Moodle 2.7

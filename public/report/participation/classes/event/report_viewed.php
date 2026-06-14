@@ -26,6 +26,8 @@ namespace report_participation\event;
 defined('MOODLE_INTERNAL') || die();
 
 /**
+ * Event triggered when the participation report is viewed.
+ *
  * The report_participation report viewed event class.
  *
  * @property-read array $other {

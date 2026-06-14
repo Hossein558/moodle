@@ -27,6 +27,8 @@ namespace core_analytics;
 defined('MOODLE_INTERNAL') || die();
 
 /**
+ * Provides default bulk actions for analytics predictions.
+ *
  * Default list of bulk actions to reuse across different targets as presets.
  *
  * @package   core_analytics
@@ -36,6 +38,8 @@ defined('MOODLE_INTERNAL') || die();
 class default_bulk_actions {
 
     /**
+ * Returns the 'accept' bulk action.
+ *
      * Accepted prediction.
      *
      * @return \core_analytics\bulk_action
