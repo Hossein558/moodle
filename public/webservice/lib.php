@@ -30,17 +30,20 @@ use core_external\external_single_structure;
 use core_external\external_value;
 
 /**
- * WEBSERVICE_AUTHMETHOD_USERNAME - username/password authentication (also called simple authentication)
+ * WEBSERVICE_AUTHMETHOD_USERNAME - Username/password authentication (also called simple authentication).
+ * This method is generally used for direct integrations where the client securely stores the credentials.
  */
 define('WEBSERVICE_AUTHMETHOD_USERNAME', 0);
 
 /**
- * WEBSERVICE_AUTHMETHOD_PERMANENT_TOKEN - most common token authentication (external app, mobile app...)
+ * WEBSERVICE_AUTHMETHOD_PERMANENT_TOKEN - The most common token authentication (external app, mobile app...).
+ * Uses an external service token that is permanently linked to an external system.
  */
 define('WEBSERVICE_AUTHMETHOD_PERMANENT_TOKEN', 1);
 
 /**
- * WEBSERVICE_AUTHMETHOD_SESSION_TOKEN - token for embedded application (requires Moodle session)
+ * WEBSERVICE_AUTHMETHOD_SESSION_TOKEN - Token for embedded applications (requires an active Moodle session).
+ * Used typically by internal Moodle components making AJAX calls to web services.
  */
 define('WEBSERVICE_AUTHMETHOD_SESSION_TOKEN', 2);
 

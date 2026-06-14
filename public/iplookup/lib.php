@@ -27,9 +27,12 @@
 defined('MOODLE_INTERNAL') || die();
 
 /**
- * Returns location information
- * @param string $ip
- * @return array
+ * Returns location information based on the provided IP address.
+ * It primarily relies on the MaxMind GeoIP2 database for resolution. If the local database
+ * is missing or fails, this function may return error notes or fallback behavior.
+ *
+ * @param string $ip The IPv4 or IPv6 address to look up.
+ * @return array An associative array containing 'city', 'country', 'longitude', 'latitude', 'error', 'note', and 'title'.
  */
 function iplookup_find_location($ip) {
     global $CFG;
