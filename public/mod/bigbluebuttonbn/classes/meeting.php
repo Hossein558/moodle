@@ -36,6 +36,9 @@ use stdClass;
  * @copyright 2021 Andrew Lyons <andrew@nicols.co.uk>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+/**
+ * Represents a BigBlueButton Meeting and manages its state.
+ */
 class meeting {
 
     /** @var instance The bbb instance */

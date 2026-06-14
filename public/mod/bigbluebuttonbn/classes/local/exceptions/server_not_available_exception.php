@@ -27,6 +27,9 @@ namespace mod_bigbluebuttonbn\local\exceptions;
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  * @author    Laurent David  (laurent [at] call-learning [dt] fr)
  */
+/**
+ * Exception thrown when the BigBlueButton server is unavailable.
+ */
 class server_not_available_exception extends \moodle_exception {
 
     /**

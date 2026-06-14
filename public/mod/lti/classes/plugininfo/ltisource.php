@@ -28,6 +28,9 @@ use core\plugininfo\base;
 defined('MOODLE_INTERNAL') || die();
 
 
+/**
+ * Plugin info class for LTI sources.
+ */
 class ltisource extends base {
     /**
      * Returns the node name used in admin settings menu for this plugin settings (if applicable)

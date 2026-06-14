@@ -35,6 +35,9 @@ use pix_icon;
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  * @author    Laurent David (laurent@call-learning.fr)
  */
+/**
+ * Manages the display and configuration of BigBlueButtonBN extension plugins in the admin UI.
+ */
 class admin_plugin_manager {
     /** @var object the url of the manage submission plugin page */
     private $pageurl;

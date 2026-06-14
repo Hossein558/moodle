@@ -561,6 +561,12 @@ class resource_content_file_info extends file_info_stored {
     }
 }
 
+/**
+ * Sets the main file for a resource instance.
+ *
+ * @param object $data The resource instance data.
+ * @return void
+ */
 function resource_set_mainfile($data) {
     global $DB;
     $fs = get_file_storage();

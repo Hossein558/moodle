@@ -29,6 +29,9 @@ require_once($CFG->dirroot.'/course/moodleform_mod.php');
 require_once($CFG->dirroot.'/mod/page/locallib.php');
 require_once($CFG->libdir.'/filelib.php');
 
+/**
+ * Form definition for adding or editing a page instance.
+ */
 class mod_page_mod_form extends moodleform_mod {
     function definition() {
         global $CFG, $DB;

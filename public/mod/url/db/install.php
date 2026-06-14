@@ -30,6 +30,11 @@
 
 defined('MOODLE_INTERNAL') || die;
 
+/**
+ * Install hook for the URL module.
+ *
+ * @return void
+ */
 function xmldb_url_install() {
     global $CFG;
 

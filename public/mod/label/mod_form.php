@@ -27,6 +27,9 @@ defined('MOODLE_INTERNAL') || die;
 
 require_once ($CFG->dirroot.'/course/moodleform_mod.php');
 
+/**
+ * Form definition for adding or editing a label instance.
+ */
 class mod_label_mod_form extends moodleform_mod {
 
     function definition() {

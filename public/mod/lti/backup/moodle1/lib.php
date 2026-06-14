@@ -25,6 +25,9 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+/**
+ * Moodle 1.x backup handler for the LTI module.
+ */
 class moodle1_mod_lti_handler extends moodle1_mod_handler {
 
     /** @var moodle1_file_manager */

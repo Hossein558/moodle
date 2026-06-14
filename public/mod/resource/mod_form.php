@@ -29,6 +29,9 @@ require_once($CFG->dirroot.'/course/moodleform_mod.php');
 require_once($CFG->dirroot.'/mod/resource/locallib.php');
 require_once($CFG->libdir.'/filelib.php');
 
+/**
+ * Form definition for adding or editing a resource instance.
+ */
 class mod_resource_mod_form extends moodleform_mod {
     function definition() {
         global $CFG, $DB;

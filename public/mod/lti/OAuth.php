@@ -95,6 +95,9 @@ class OAuthConsumer {
     }
 }
 
+/**
+ * Represents an OAuth Token (request or access).
+ */
 class OAuthToken {
     // access tokens and request tokens
     public $key;
@@ -125,6 +128,9 @@ class OAuthToken {
     }
 }
 
+/**
+ * Base class for OAuth Signature Methods.
+ */
 class OAuthSignatureMethod {
     public function check_signature(&$request, $consumer, $token, $signature) {
         $built = $this->build_signature($request, $consumer, $token);
@@ -195,6 +201,9 @@ class OAuthSignatureMethod_HMAC_SHA256 extends OAuthSignatureMethod_HMAC {
     }
 }
 
+/**
+ * PLAINTEXT OAuth Signature Method.
+ */
 class OAuthSignatureMethod_PLAINTEXT extends OAuthSignatureMethod {
     /**
      * Name of the Algorithm used.
@@ -224,6 +233,9 @@ class OAuthSignatureMethod_PLAINTEXT extends OAuthSignatureMethod {
     }
 }
 
+/**
+ * RSA-SHA1 OAuth Signature Method.
+ */
 class OAuthSignatureMethod_RSA_SHA1 extends OAuthSignatureMethod {
     /**
      * Name of the Algorithm used.
@@ -291,6 +303,9 @@ class OAuthSignatureMethod_RSA_SHA1 extends OAuthSignatureMethod {
     }
 }
 
+/**
+ * Represents an OAuth Request.
+ */
 class OAuthRequest {
     private $parameters;
     private $http_method;
@@ -545,6 +560,9 @@ class OAuthRequest {
     }
 }
 
+/**
+ * Represents an OAuth Server.
+ */
 class OAuthServer {
     protected $timestamp_threshold = 300; // in seconds, five minutes
     protected $version = 1.0; // hi blaine
@@ -731,6 +749,9 @@ class OAuthServer {
 
 }
 
+/**
+ * Interface for the OAuth Data Store.
+ */
 class OAuthDataStore {
     function lookup_consumer($consumer_key) {
         // implement me
@@ -757,6 +778,9 @@ class OAuthDataStore {
 
 }
 
+/**
+ * Utility class for OAuth operations.
+ */
 class OAuthUtil {
     public static function urlencode_rfc3986($input) {
         if (is_array($input)) {

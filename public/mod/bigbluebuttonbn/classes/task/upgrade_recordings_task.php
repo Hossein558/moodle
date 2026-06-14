@@ -32,6 +32,9 @@ use moodle_exception;
  * @copyright 2021 Jesus Federico, Blindside Networks Inc <jesus at blindsidenetworks dot com>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+/**
+ * Scheduled task for upgrading BBB recordings across versions.
+ */
 class upgrade_recordings_task extends adhoc_task {
     /**
      * Run the migration task.

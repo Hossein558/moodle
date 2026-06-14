@@ -26,6 +26,9 @@ use mod_bigbluebuttonbn\recording;
  * @copyright 2021 Jesus Federico, Blindside Networks Inc <jesus at blindsidenetworks dot com>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+/**
+ * Scheduled task for resetting or converting BBB recordings.
+ */
 class reset_recordings extends adhoc_task {
 
     /** @var int Chunk size to use when resetting recordings */

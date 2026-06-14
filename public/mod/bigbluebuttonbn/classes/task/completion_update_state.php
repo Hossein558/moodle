@@ -27,6 +27,9 @@ use mod_bigbluebuttonbn\local\proxy\bigbluebutton_proxy;
  * @copyright 2019 onwards, Blindside Networks Inc
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+/**
+ * Scheduled task for updating completion states based on meeting attendance.
+ */
 class completion_update_state extends adhoc_task {
     /**
      * Run bigbluebuttonbn cron.
