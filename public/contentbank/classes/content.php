@@ -15,7 +15,11 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Content manager class
+ * Content base model class.
+ *
+ * Represents an individual content bank entry and provides data access methods,
+ * file management, access permission checks, and operations to update or move the content.
+ * Subclasses generally extend this to override specific data management.
  *
  * @package    core_contentbank
  * @copyright  2020 Amaia Anabitarte <amaia@moodle.com>
@@ -181,6 +185,8 @@ abstract class content {
 
     /**
      * Set a new contextid to the content.
+     *
+     * This moves the content and its associated files to a new context.
      *
      * @param int $contextid  The new contextid of the content.
      * @return bool  True if the content has been succesfully updated. False otherwise.

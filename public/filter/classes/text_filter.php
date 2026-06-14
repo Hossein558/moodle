@@ -21,8 +21,12 @@ use core\exception\coding_exception;
 use moodle_page;
 
 /**
- * Base class for text filters. You just need to override this class and
- * implement the filter method.
+ * Base abstract class for text filters.
+ *
+ * All text filter plugins must extend this class and implement the `filter` method.
+ * They may also override stage-specific methods (like `filter_stage_pre_format` or
+ * `filter_stage_post_clean`) to inject their filtering logic at specific points in
+ * the text formatting pipeline.
  *
  * @package core_filters
  * @copyright 1999 onwards Martin Dougiamas  {@link http://moodle.com}
