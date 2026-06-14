@@ -54,16 +54,19 @@ define('GLOSSARY_FULLWITHOUTAUTHOR', 'fullwithoutauthor');
 
 /// STANDARD FUNCTIONS ///////////////////////////////////////////////////////////
 /**
+ * Given an object containing all the necessary data,
+ * (defined by the form in mod_form.php) this function
+ * will create a new instance and return the id number
+ * of the new instance.
+ *
+ * Acts as the standard module hook for module creation.
+ *
  * @global object
  * @param object $glossary
  * @return int
  */
 function glossary_add_instance($glossary) {
     global $DB;
-/// Given an object containing all the necessary data,
-/// (defined by the form in mod_form.php) this function
-/// will create a new instance and return the id number
-/// of the new instance.
 
     if (empty($glossary->ratingtime) or empty($glossary->assessed)) {
         $glossary->assesstimestart  = 0;

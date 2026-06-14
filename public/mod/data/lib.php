@@ -1221,6 +1221,8 @@ function data_tags_check($dataid, $template) {
 /**
  * Adds an instance of a data
  *
+ * Core Moodle API hook to add a new database activity instance.
+ *
  * @param stdClass $data
  * @param mod_data_mod_form $mform
  * @return int intance id
