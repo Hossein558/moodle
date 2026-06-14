@@ -73,6 +73,9 @@ function workshop_supports($feature) {
  * will save a new instance and return the id number
  * of the new instance.
  *
+ * This function implements the standard Moodle activity module hook
+ * for adding a new workshop instance to a course.
+ *
  * @param stdClass $workshop An object from the form in mod_form.php
  * @return int The id of the newly inserted workshop record
  */

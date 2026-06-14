@@ -166,8 +166,14 @@ function wiki_get_last_version($pageid) {
 
 /**
  * Get page section
- * @param int $pageid
- * @param string $section
+ *
+ * This function retrieves a specific section from a wiki page content.
+ * It first gets the current version of the page, then uses the wiki parser
+ * proxy to extract the requested section based on the content format.
+ *
+ * @param object $page The wiki page object
+ * @param string $section The title or identifier of the section to retrieve
+ * @return string The section content extracted from the page
  */
 function wiki_get_section_page($page, $section) {
 
