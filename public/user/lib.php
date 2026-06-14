@@ -17,6 +17,10 @@
 /**
  * External user API
  *
+ * Contains functions for manipulating user records in the database, including creation,
+ * updating, deleting, and fetching users. Acts as the primary interface for user data
+ * abstraction within Moodle.
+ *
  * @package   core_user
  * @copyright 2009 Moodle Pty Ltd (http://moodle.com)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later

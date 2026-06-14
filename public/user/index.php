@@ -17,6 +17,10 @@
 /**
  * Lists all the users within a given course.
  *
+ * Provides a paginated list of participants in a course context. Handles filtering,
+ * bulk actions (e.g., messaging), and enforces capabilities like viewing user profiles
+ * or hidden users.
+ *
  * @copyright 1999 Martin Dougiamas  http://dougiamas.com
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  * @package core_user

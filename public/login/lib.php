@@ -18,6 +18,10 @@
  *
  * Login library file of login/password related Moodle functions.
  *
+ * Provides utility functions for processing password reset requests, generating
+ * tokens for reset links, validating user identity and login sessions, and sending
+ * notification emails.
+ *
  * @package    core
  * @subpackage lib
  * @copyright  Catalyst IT

@@ -17,6 +17,10 @@
 /**
  * Test auth settings.
  *
+ * This script provides an administrative interface for testing the configuration
+ * settings of various authentication plugins (e.g., verifying LDAP connectivity).
+ * It dynamically discovers authentication plugins that support the `test_settings` method.
+ *
  * @package    core_auth
  * @copyright  2013 Petr Skoda {@link http://skodak.org}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
