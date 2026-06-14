@@ -15,7 +15,12 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Moodle frontpage.
+ * Main Moodle frontpage.
+ *
+ * This script is the primary entry point for the Moodle application. It handles
+ * initial routing, checks for installation and upgrades, manages user login state
+ * and redirects (e.g., to the dashboard or a specific course), and renders the
+ * site home page.
  *
  * @package    core
  * @copyright  1999 onwards Martin Dougiamas (http://dougiamas.com)
@@ -33,7 +38,8 @@ require_once($CFG->libdir .'/filelib.php');
 
 redirect_if_major_upgrade_required();
 
-// Redirect logged-in users to homepage if required.
+// Determine if logged-in users should be redirected to their preferred homepage.
+// The redirect parameter allows bypassing this logic when explicitly set to 0.
 $redirect = optional_param('redirect', 1, PARAM_BOOL);
 
 $urlparams = array();
@@ -68,14 +74,16 @@ if ($hassiteconfig && moodle_needs_upgrading()) {
     redirect($CFG->wwwroot .'/'. $CFG->admin .'/index.php');
 }
 
-// If site registration needs updating, redirect.
+// Check if site registration needs updating and redirect if necessary.
 \core\hub\registration::registration_reminder('/index.php');
 
+// Determine the preferred home page for the current user.
 $homepage = get_home_page();
 
-// If enablemyhome is disabled, redirect unconditionally, ignoring the redirect param.
-// Any explicit link to / should be redirected away.
-// $homepage is used (not $CFG->defaulthomepage) as it already resolves stale DB values.
+// Handle scenarios where the dashboard (my home) is disabled globally.
+// We redirect unconditionally, ignoring the redirect param. Any explicit link
+// to the root URL should be redirected away to a valid alternative.
+// $homepage is used here instead of $CFG->defaulthomepage as it resolves stale DB values.
 if (empty($CFG->enablemyhome)) {
     if (!isloggedin()) {
         // Non-logged-in users must log in first (forcelogin may be off, but the

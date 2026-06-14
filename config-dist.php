@@ -1,4 +1,17 @@
 <?php
+/**
+ * Moodle configuration file template.
+ *
+ * This file serves as a template for the main `config.php` file, which should
+ * be located in the top-level directory of the Moodle installation. It contains
+ * crucial settings for database connection, directory paths, and other core
+ * configurations necessary for Moodle to function.
+ *
+ * @package    core
+ * @copyright  1999 onwards Martin Dougiamas  http://moodle.com
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
 ///////////////////////////////////////////////////////////////////////////
 //                                                                       //
 // Moodle configuration file                                             //

@@ -16,10 +16,15 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Displays help via AJAX call or in a new page
+ * Help tooltip rendering script.
+ *
+ * This script is responsible for displaying help content either via AJAX calls
+ * or in a new popup page. It fetches the requested formatted help string based
+ * on the provided identifier and component. To optimize performance and avoid
+ * session side-effects, it defines `NO_MOODLE_COOKIES`.
  *
  * Use {@link core_renderer::help_icon()} or {@link addHelpButton()} to display
- * the help icon.
+ * the help icon in the UI.
  *
  * @copyright 2002 onwards Martin Dougiamas
  * @package   core

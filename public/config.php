@@ -15,7 +15,12 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Moodle configuration loader.
+ * Main Moodle configuration loader.
+ *
+ * This file acts as a bootstrap script for the public webroot. It locates and
+ * includes the actual global `config.php` from the directory above. If the
+ * configuration file is not found, it assumes Moodle is not installed and
+ * redirects the user to `install.php`.
  *
  * @package    core
  * @copyright  2024 Andrew Lyons <andrew@nicols.co.uk>

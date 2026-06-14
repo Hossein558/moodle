@@ -16,11 +16,12 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * MOODLE VERSION INFORMATION.
+ * Moodle core version information.
  *
- * This file defines the current version of the core Moodle code being used.
- * This is compared against the values stored in the database to determine
- * whether upgrades should be performed (see lib/db/*.php)
+ * This file defines the current version constants of the core Moodle code.
+ * These values are critical for the upgrade process; they are compared against
+ * the version values stored in the database to determine if database upgrades
+ * or cache invalidations are necessary. It is commonly included during bootstrap.
  *
  * @package    core
  * @copyright  1999 onwards Martin Dougiamas (http://dougiamas.com)

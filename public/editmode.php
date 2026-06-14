@@ -15,7 +15,11 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Set Mode.
+ * Edit Mode toggle endpoint.
+ *
+ * This script processes requests to toggle the current user's editing mode
+ * on or off. After updating the user's editing state in the session, it
+ * redirects back to the previous page specified by the `pageurl` parameter.
  *
  * @package    core
  * @copyright  2021 Andrew Lyons
