@@ -21,7 +21,11 @@ use Psr\Http\Message\RequestInterface;
 use Spatie\Cloneable\Cloneable;
 
 /**
- * Class provider.
+ * Base class for all AI providers.
+ *
+ * Plugins that implement AI functionality (such as OpenAI or AWS Bedrock)
+ * must extend this abstract class. It provides methods to execute AI actions,
+ * determine supported sub-actions, and verify configurations.
  *
  * @package    core_ai
  * @copyright  2024 Matt Porritt <matt.porritt@moodle.com>

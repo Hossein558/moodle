@@ -31,6 +31,10 @@ use core_payment\event\account_updated;
 /**
  * Helper class for the payment subsystem.
  *
+ * Contains shared utility methods for payment components including fetching
+ * available gateways, calculating costs with surcharges, saving payment
+ * accounts, delivering orders, and constructing success URLs.
+ *
  * @copyright  2019 Shamim Rezaie <shamim@moodle.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */

@@ -29,6 +29,10 @@ use core\persistent;
 /**
  * Class account
  *
+ * Represents a payment account entity which ties together various payment
+ * gateway configurations. It extends persistent to handle database operations
+ * for the `payment_accounts` table.
+ *
  * @package     core_payment
  * @copyright   2020 Marina Glancy
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later

@@ -23,6 +23,11 @@ use core\plugininfo\aiprovider as aiproviderplugin;
 /**
  * AI subsystem manager.
  *
+ * This class serves as the central manager for the AI subsystem.
+ * It is responsible for orchestrating AI providers, determining supported actions,
+ * handling policy acceptance, routing AI requests to the configured models,
+ * and providing system-wide settings for the AI integration.
+ *
  * @package    core_ai
  * @copyright  2024 Matt Porritt <matt.porritt@moodle.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
