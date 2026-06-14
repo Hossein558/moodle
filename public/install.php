@@ -17,6 +17,10 @@
 
 /**
  * This script creates config.php file during installation.
+ * It is the main entry point for the Moodle web installer.
+ * The script handles environment checks, language selection,
+ * directory path configurations, database setup, and generates
+ * the `config.php` file upon successful execution.
  *
  * @package    core
  * @subpackage install

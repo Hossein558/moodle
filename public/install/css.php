@@ -15,7 +15,11 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * This script prints basic CSS for the installer
+ * This script prints basic CSS for the installer.
+ *
+ * It dynamically gathers styles from the Moodle boost theme
+ * and outputs minimal styles needed to render the installer interface
+ * properly before the full Moodle application and its configuration are available.
  *
  * @package    core
  * @subpackage install
