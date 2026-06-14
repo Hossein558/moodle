@@ -28,16 +28,14 @@
  *
  * This final class is in charge of controlling all the backup architecture, for any
  * type of backup. Based in type, format, interactivity and target, it stores the
- * whole execution plan and settings that will be used later by the @backup_worker,
- * applies all the defaults, performs all the security contraints and is in charge
- * of handling the ui if necessary. Also logging strategy is defined here.
+ * whole execution plan and settings that will be used later by the backup_worker.
+ * It applies all defaults, performs security constraints, orchestrates the various
+ * backup tasks and steps, manages temporary tables/files, and defines the logging
+ * strategy for the entire operation.
  *
- * Note the class is 100% neutral and usable for *any* backup. It just stores/requests
- * all the needed information from other backup classes in order to have everything well
- * structured in order to allow the @backup_worker classes to do their job.
- *
- * In other words, a mammoth class, but don't worry, practically everything is delegated/
- * aggregated!)
+ * Note the class is 100% neutral and usable for *any* backup. It delegates heavily
+ * to specific execution elements while acting as the central state and configuration
+ * manager.
  */
 class backup_controller extends base_controller {
     /** @var string Unique identifier for this backup */

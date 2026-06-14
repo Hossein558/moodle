@@ -3,6 +3,14 @@
 require_once($CFG->libdir . '/portfoliolib.php');
 require_once($CFG->libdir . '/portfolio/plugin.php');
 
+/**
+ * Download portfolio plugin
+ *
+ * This plugin implements a simple pull-based portfolio export. It acts as an
+ * internal mechanism allowing users to package their exported Moodle content
+ * (e.g., assignments, posts) into a downloadable Zip file, bypassing the
+ * need for an external API.
+ */
 class portfolio_plugin_download extends portfolio_plugin_pull_base {
 
     protected $exportconfig;

@@ -17,6 +17,10 @@
 /**
  * ODS data format writer
  *
+ * This class handles exporting data into the OpenDocument Spreadsheet (.ods)
+ * format. Similar to the Excel writer, it extends the spout_base backend
+ * to stream cell data and manages worksheet titles to comply with the ODS specification.
+ *
  * @package    dataformat_ods
  * @copyright  2016 Brendan Heywood (brendan@catalyst-au.net)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later

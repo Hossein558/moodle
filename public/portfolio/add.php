@@ -17,6 +17,11 @@
 /**
  * This file is the main controller to do with the portfolio export wizard.
  *
+ * It orchestrates the user-facing process of exporting content from a Moodle
+ * module into an external portfolio. It handles step-by-step state management,
+ * configuration form rendering, permission checking, and delegates the final
+ * packaging to the chosen portfolio plugin (e.g., Google Docs, Download).
+ *
  * @package core_portfolio
  * @copyright 2008 Penny Leach <penny@catalyst.net.nz>,
  *            Martin Dougiamas <http://dougiamas.com>

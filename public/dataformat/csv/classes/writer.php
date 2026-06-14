@@ -17,6 +17,11 @@
 /**
  * CSV data format writer
  *
+ * This class extends the generic spout_base writer to handle the specific
+ * streaming and encoding requirements for generating Comma-Separated Values
+ * (.csv) files. It serves as a bridge between Moodle's abstract dataformat API
+ * and the underlying document generation library.
+ *
  * @package    dataformat_csv
  * @copyright  2016 Brendan Heywood (brendan@catalyst-au.net)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later

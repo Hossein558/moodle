@@ -23,6 +23,13 @@
 require_once($CFG->libdir.'/portfolio/plugin.php');
 require_once($CFG->libdir . '/google/lib.php');
 
+/**
+ * Google Docs Push Plugin
+ *
+ * This class implements a push-based portfolio plugin that connects to a user's
+ * Google Drive. It leverages the native Google API client to authenticate
+ * (via OAuth2) and upload packaged files/content directly to Google Docs/Drive.
+ */
 class portfolio_plugin_googledocs extends portfolio_plugin_push_base {
     /**
      * Google Client.
