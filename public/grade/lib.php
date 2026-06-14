@@ -15,7 +15,10 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Functions used by gradebook plugins and reports.
+ * Functions used by gradebook plugins and reports within the Grading & Assessment Framework.
+ *
+ * This file contains the core functions and classes used by gradebook plugins,
+ * reports, import/export scripts, and advanced grading methods.
  *
  * @package   core_grades
  * @copyright 2009 Petr Skoda and Nicolas Connault

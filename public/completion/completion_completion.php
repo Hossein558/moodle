@@ -15,7 +15,10 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Course completion status for a particular user/course
+ * Course completion status for a particular user/course within the Grading & Assessment Framework.
+ *
+ * This class represents the completion status of a user in a specific course,
+ * extending the base data object to track enrollment, start time, and completion time.
  *
  * @package core_completion
  * @category completion
@@ -28,7 +31,10 @@ defined('MOODLE_INTERNAL') || die();
 require_once($CFG->dirroot.'/completion/data_object.php');
 
 /**
- * Course completion status for a particular user/course
+ * Course completion status for a particular user/course within the Grading & Assessment Framework.
+ *
+ * This class represents the completion status of a user in a specific course,
+ * extending the base data object to track enrollment, start time, and completion time.
  *
  * @package core_completion
  * @category completion

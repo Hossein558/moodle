@@ -15,7 +15,11 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Compontent definition of a gradeitem.
+ * Component definition of a gradeitem within the Grading & Assessment Framework.
+ *
+ * This class represents a grade item for a specific component, providing methods to
+ * manage grading data, scales, and advanced grading methods for activities
+ * using the grading framework.
  *
  * @package   core_grades
  * @copyright Andrew Nicols <andrew@nicols.co.uk>
@@ -35,7 +39,11 @@ use grade_item as core_gradeitem;
 use grading_manager;
 
 /**
- * Compontent definition of a gradeitem.
+ * Component definition of a gradeitem within the Grading & Assessment Framework.
+ *
+ * This class represents a grade item for a specific component, providing methods to
+ * manage grading data, scales, and advanced grading methods for activities
+ * using the grading framework.
  *
  * @package   core_grades
  * @copyright Andrew Nicols <andrew@nicols.co.uk>
@@ -46,7 +54,7 @@ abstract class component_gradeitem {
     /** @var array The scale data for the current grade item */
     protected $scale;
 
-    /** @var string The component */
+    /** @var string The component associated with this grade item */
     protected $component;
 
     /** @var context The context for this activity */

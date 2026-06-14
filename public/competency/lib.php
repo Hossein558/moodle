@@ -15,7 +15,10 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Competency lib.
+ * Competency framework library for the Grading & Assessment Framework.
+ *
+ * This file provides hooks, settings, and general utility functions for the competency
+ * subsystem, which handles learning plans and their alignment with course content.
  *
  * @package    core_competency
  * @copyright  2016 Frédéric Massart - FMCorz.net
