@@ -35,6 +35,14 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+/**
+ * Global configuration of jQuery plugins to be loaded by the RequireJS system.
+ *
+ * Each plugin configuration specifies the files needed to load it. The array key
+ * is the alias by which the plugin is known to the module loader.
+ *
+ * @var array $plugins Configuration array.
+ */
 $plugins = array(
     'jquery'  => array('files' => array('jquery-3.7.1.min.js')),
     'ui'      => ['files' => ['ui-1.14.1/jquery-ui.min.js']],
