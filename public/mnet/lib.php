@@ -22,12 +22,13 @@ define('RPC_NOSUCHMETHOD',      5);
 define('RPC_FORBIDDENMETHOD',   6);
 
 /**
- * Strip extraneous detail from a URL or URI and return the hostname
+ * Strip extraneous detail from a URL or URI and return the hostname.
+ * This is frequently used by MNet to resolve host identifiers for remote systems.
  *
  * @param  string  $uri  The URI of a file on the remote computer, optionally
  *                       including its http:// prefix like
  *                       http://www.example.com/index.html
- * @return string        Just the hostname
+ * @return string|false  Just the hostname, or false if not matched.
  */
 function mnet_get_hostname_from_uri($uri = null) {
     $count = preg_match("@^(?:http[s]?://)?([A-Z0-9\-\.]+).*@i", $uri, $matches);
@@ -36,10 +37,12 @@ function mnet_get_hostname_from_uri($uri = null) {
 }
 
 /**
- * Get the remote machine's SSL Cert
+ * Get the remote machine's SSL Cert for establishing a trusted MNet connection.
+ * MNet relies on these certificates to sign and verify XML-RPC payloads securely.
  *
  * @param  string  $uri     The URI of a file on the remote computer, including
  *                          its http:// or https:// prefix
+ * @param  mixed   $application The application type.
  * @return string           A PEM formatted SSL Certificate.
  */
 function mnet_get_public_key($uri, $application=null) {

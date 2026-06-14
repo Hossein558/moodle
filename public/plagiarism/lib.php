@@ -31,6 +31,8 @@ if (!defined('MOODLE_INTERNAL')) {
 
 /**
  * Plagiarism base class used by plugins.
+ * This class establishes the standard integration contract for external plagiarism
+ * detection services (e.g., Turnitin), enabling hooks into assignments and other modules.
  *
  * @since Moodle 2.0
  * @package    core_plagiarism
@@ -40,9 +42,11 @@ if (!defined('MOODLE_INTERNAL')) {
 abstract class plagiarism_plugin {
 
     /**
-     * hook to allow plagiarism specific information to be displayed beside a submission
-     * @param array  $linkarraycontains all relevant information for the plugin to generate a link
-     * @return string
+     * Hook to allow plagiarism-specific information to be displayed beside a submission.
+     * Often used to display originality reports or scores.
+     *
+     * @param array $linkarraycontains all relevant information for the plugin to generate a link
+     * @return string The HTML output displaying plagiarism data/links.
      */
     public function get_links($linkarray) {
         return '';

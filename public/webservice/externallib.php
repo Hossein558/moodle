@@ -30,9 +30,10 @@ use core_external\external_value;
 class core_webservice_external extends \core_external\external_api {
 
     /**
-     * Returns description of method parameters
+     * Returns description of method parameters for fetching basic site information.
+     * This defines the input schema expected by the get_site_info web service.
      *
-     * @return external_function_parameters
+     * @return external_function_parameters The definitions of the expected parameters.
      * @since Moodle 2.2
      */
     public static function get_site_info_parameters() {
