@@ -17,6 +17,11 @@
 /**
  * Boost config.
  *
+ * Segment 11: Blocks & Themes
+ * The Boost theme is the modern core theme for Moodle, built on top of Bootstrap.
+ * This configuration file defines how the theme layouts operate, where blocks are
+ * placed (regions), and other core visual configuration options.
+ *
  * @package   theme_boost
  * @copyright 2016 Frédéric Massart
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later

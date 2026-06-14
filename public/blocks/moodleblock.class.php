@@ -17,6 +17,11 @@
 /**
  * This file contains the parent class for moodle blocks, block_base.
  *
+ * Segment 11: Blocks & Themes
+ * Blocks in Moodle provide modular UI widgets that are typically placed in side panels
+ * (the 'side-pre' or 'side-post' regions depending on the theme). This abstract class
+ * provides the standard lifecycle and structure that all block plugins must inherit from.
+ *
  * @package    core_block
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License
  */
@@ -761,6 +766,9 @@ EOD;
 
 /**
  * Specialized class for displaying a block with a list of icons/text labels
+ *
+ * Segment 11: Blocks & Themes
+ * A specific type of block that handles list-based widget content instead of pure text.
  *
  * The get_content method should set $this->content->items and (optionally)
  * $this->content->icons, instead of $this->content->text.
