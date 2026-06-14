@@ -21,6 +21,10 @@
  * Normally this is only called by the main config.php file
  * Normally this file does not need to be edited.
  *
+ * **Segment 16**: Bootstrapping Script.
+ * This file acts as the primary initialization script for Moodle, handling
+ * class autoloading, database connectivity, and core global state setups.
+ *
  * @package    core
  * @subpackage lib
  * @copyright  1999 onwards Martin Dougiamas  {@link http://moodle.com}
