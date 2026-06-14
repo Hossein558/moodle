@@ -30,6 +30,10 @@ require_once(__DIR__ . '/../lib.php');
 /**
  * Behat command related utils
  *
+ * **Segment 16**: Behat Command Utility.
+ * Provides helper methods for configuring and executing Behat behavioral tests,
+ * bridging Moodle's test environment setup with the Behat framework.
+ *
  * @package    core
  * @category   test
  * @copyright  2013 David Monllaó

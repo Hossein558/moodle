@@ -27,6 +27,10 @@ namespace core\event;
 /**
  * All other event classes must extend this class.
  *
+ * **Segment 16**: Base event class.
+ * Provides the foundational structure for Moodle's event-driven architecture,
+ * standardizing event creation, validation, and triggering mechanisms.
+ *
  * @package    core
  * @since      Moodle 2.6
  * @copyright  2013 Petr Skoda {@link http://skodak.org}

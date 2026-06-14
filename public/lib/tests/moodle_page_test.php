@@ -17,6 +17,10 @@
 /**
  * Tests for the moodle_page class.
  *
+ * **Segment 16**: Moodle Page Test.
+ * Validates the core page generation, context handling, URL routing, and layout
+ * structures managed by the `moodle_page` class.
+ *
  * @package   core
  * @category  test
  * @copyright 2009 Tim Hunt
