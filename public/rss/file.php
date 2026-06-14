@@ -17,6 +17,10 @@
 /**
  * rss/file.php - entry point to serve rss streams
  *
+ * This script acts as the primary router for RSS requests across the platform.
+ * It securely authenticates requests via URL tokens (avoiding cookie-based sessions for feeds),
+ * determines the requested component, and invokes the component-specific RSS generation logic.
+ *
  * This script simply checks the parameters to construct a $USER
  * then finds and calls a function in the relevant component to
  * actually check security and create the RSS stream

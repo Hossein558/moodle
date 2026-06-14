@@ -27,9 +27,10 @@ use \core_favourites\local\repository\favourite_repository_interface;
 defined('MOODLE_INTERNAL') || die();
 
 /**
- * Class service, providing an single API for interacting with the favourites subsystem, for all favourites of a specific component.
+ * Class service, providing a single API for interacting with the favourites subsystem, for all favourites of a specific component.
  *
- * This class provides operations which can be applied to favourites within a component, based on type and context identifiers.
+ * This service layer class exposes the broader business logic for managing favorites at a component level.
+ * It provides operations which can be applied to favorites within a component, based on type and context identifiers.
  *
  * All object persistence is delegated to the favourite_repository_interface object.
  *

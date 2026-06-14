@@ -28,10 +28,11 @@ use \core_favourites\local\repository\favourite_repository_interface;
 defined('MOODLE_INTERNAL') || die();
 
 /**
- * Class service, providing an single API for interacting with the favourites subsystem for a SINGLE USER.
+ * Class service, providing a single API for interacting with the favourites subsystem for a SINGLE USER.
  *
- * This class is responsible for exposing key operations (add, remove, find) and enforces any business logic necessary to validate
- * authorization/data integrity for these operations.
+ * This service layer class exposes the business logic for adding, removing, and finding user favorites.
+ * It is scoped to a specific user context and enforces necessary business logic to validate
+ * authorization and data integrity for these operations.
  *
  * All object persistence is delegated to the favourite_repository_interface object.
  *

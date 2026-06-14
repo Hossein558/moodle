@@ -25,7 +25,11 @@
 defined('MOODLE_INTERNAL') || die();
 
 /**
- * Class to manage tag areas
+ * Class to manage tag areas.
+ *
+ * Tag areas define which components and item types within Moodle can have tags applied to them,
+ * and associate them with a specific tag collection. This allows different areas of the system
+ * to use different pools of tags if needed.
  *
  * @package   core_tag
  * @copyright 2015 Marina Glancy

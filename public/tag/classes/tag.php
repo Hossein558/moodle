@@ -27,11 +27,14 @@ defined('MOODLE_INTERNAL') || die();
 /**
  * Represents one tag and also contains lots of useful tag-related methods as static functions.
  *
+ * This class provides a global tagging system for Moodle, allowing metadata labels (tags)
+ * to be applied to various entities across the platform.
+ *
  * Tags can be added to any database records.
- * $itemtype refers to the DB table name
- * $itemid refers to id field in this DB table
- * $component is the component that is responsible for the tag instance
- * $context is the affected context
+ * $itemtype refers to the DB table name (e.g., 'course', 'post').
+ * $itemid refers to id field in this DB table.
+ * $component is the component that is responsible for the tag instance (e.g., 'core', 'mod_forum').
+ * $context is the affected context.
  *
  * BASIC INSTRUCTIONS :
  *  - to "tag a blog post" (for example):

@@ -29,7 +29,9 @@ defined('MOODLE_INTERNAL') || die();
 /**
  * Class service_factory, providing functions for location of service objects for the favourites subsystem.
  *
- * This class is responsible for providing service objects to clients only.
+ * This class serves as a locator/factory providing clean access to the service objects.
+ * It abstracts away the dependency injection of repositories into the service layer,
+ * providing clients with fully initialized service objects for interacting with favorites.
  *
  * @copyright 2018 Jake Dallimore <jrhdallimore@gmail.com>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
