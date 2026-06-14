@@ -17,6 +17,10 @@
 /**
  * pdf data format writer
  *
+ * This class provides export functionality to PDF documents by wrapping
+ * Moodle's native PDF abstraction (often TCPDF). It extends the base dataformat
+ * class to iterate over data records and draw them as paginated PDF tables.
+ *
  * @package    dataformat_pdf
  * @copyright  2019 Shamim Rezaie <shamim@moodle.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later

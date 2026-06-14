@@ -26,9 +26,11 @@
  * Class implementing the controller of any restore process
  *
  * This final class is in charge of controlling all the restore architecture, for any
- * type of backup.
- *
- * TODO: Finish phpdocs
+ * type of backup. It manages the full lifecycle of restoring a previously generated
+ * backup into a Moodle course. This includes parsing backup structures, validating
+ * the environment, configuring restore settings based on the target (new course,
+ * existing course, etc.), and executing the mapped restore tasks and steps to
+ * recreate the archived data within Moodle.
  */
 class restore_controller extends base_controller {
 

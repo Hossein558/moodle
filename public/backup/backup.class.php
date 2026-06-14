@@ -27,9 +27,9 @@
  *
  * This class defines various constants and methods that will be used
  * by different classes, all related with the backup process. Just provides
- * the top hierarchy of the backup controller/worker stuff.
- *
- * TODO: Finish phpdocs
+ * the top hierarchy of the backup controller/worker stuff. It acts as the
+ * foundational interface and constant repository for all backup operations,
+ * defining available formats, execution modes, and statuses.
  */
 abstract class backup implements checksumable {
 

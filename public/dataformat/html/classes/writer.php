@@ -17,6 +17,11 @@
 /**
  * html data format writer
  *
+ * This class outputs tabular data directly as a standalone HTML page. It
+ * extends the base dataformat class, utilizing Moodle's native HTML writer
+ * methods to construct the necessary HTML scaffolding, `<head>` content,
+ * and data tables.
+ *
  * @package    dataformat_html
  * @copyright  2016 Brendan Heywood (brendan@catalyst-au.net)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later

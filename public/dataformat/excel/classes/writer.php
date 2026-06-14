@@ -17,6 +17,11 @@
 /**
  * Excel data format writer
  *
+ * This class implements the creation of standard Excel spreadsheet (.xlsx)
+ * files using the spout_base backend. It provides functionality to stream data
+ * in an optimized manner, handling worksheet titles and data encoding specific
+ * to Excel OpenXML formats.
+ *
  * @package    dataformat_excel
  * @copyright  2016 Brendan Heywood (brendan@catalyst-au.net)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later

@@ -17,6 +17,11 @@
 /**
  * JSON data format writer
  *
+ * This class handles the conversion of Moodle tabular data into JSON format.
+ * Extending the base dataformat class, it manages writing the initial JSON array
+ * structure, appending JSON-encoded objects for each data row, and ensuring
+ * proper trailing commas and closing brackets to produce a valid JSON document.
+ *
  * @package    dataformat_json
  * @copyright  2016 Brendan Heywood (brendan@catalyst-au.net)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
