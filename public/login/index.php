@@ -18,6 +18,10 @@
 /**
  * Main login page.
  *
+ * This script handles the user login process. It manages authentication requests,
+ * checks for ongoing major upgrades, supports Behat testing overrides, and delegates
+ * login validation to the appropriate auth plugins.
+ *
  * @package    core
  * @subpackage auth
  * @copyright  1999 onwards Martin Dougiamas  http://dougiamas.com

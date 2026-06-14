@@ -1,9 +1,16 @@
 <?php
-  // This simple script displays all the users with pictures on one page.
-  // By default it is not linked anywhere on the site.  If you want to
-  // make it available you should link it in yourself from somewhere.
-  // Remember also to comment or delete the lines restricting access
-  // to administrators only (see below)
+/**
+ * User Pictures overview script.
+ *
+ * This simple script displays all the users with pictures on one page.
+ * By default it is not linked anywhere on the site.  If you want to
+ * make it available you should link it in yourself from somewhere.
+ * Remember also to comment or delete the lines restricting access
+ * to administrators only (see below).
+ *
+ * @package    core
+ * @subpackage userpix
+ */
 
 
 require('../config.php');
