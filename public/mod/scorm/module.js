@@ -15,6 +15,7 @@
 
 /**
  * Javascript helper function for SCORM module.
+ * Handles the SCORM tree navigation, resizing, and window/frame management.
  *
  * @package   mod-scorm
  * @copyright 2009 Petr Skoda (http://skodak.org)

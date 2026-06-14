@@ -16,6 +16,7 @@
 
 /**
  * Prints an instance of mod_h5pactivity.
+ * Displays the H5P player, fetching display options and setting up the tracking.
  *
  * @package     mod_h5pactivity
  * @copyright   2020 Ferran Recio <ferran@moodle.com>

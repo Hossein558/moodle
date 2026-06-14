@@ -14,6 +14,15 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
+/**
+ * Endpoint for SCORM API communications (via AJAX).
+ * Receives commit requests from the SCORM package and saves the user's progress.
+ *
+ * @package    mod_scorm
+ * @copyright  1999 onwards Roberto Pinna
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
 require_once('../../config.php');
 require_once($CFG->dirroot.'/mod/scorm/locallib.php');
 

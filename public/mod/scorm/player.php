@@ -14,7 +14,14 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-// This page prints a particular instance of aicc/scorm package.
+/**
+ * This page prints a particular instance of aicc/scorm package.
+ * Prepares the SCO player layout, handles interactions, and passes data to the SCORM API.
+ *
+ * @package    mod_scorm
+ * @copyright  1999 onwards Roberto Pinna
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 
 require_once('../../config.php');
 require_once($CFG->dirroot.'/mod/scorm/locallib.php');

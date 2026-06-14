@@ -16,6 +16,7 @@
 
 /**
  * Responsible for handling AJAX requests related to H5P.
+ * Acts as an endpoint for H5P editor operations, such as content saving, library fetching, etc.
  *
  * @package    core_h5p
  * @copyright  2020 Victor Deniz <victor@moodle.com>, based on code by Joubel AS

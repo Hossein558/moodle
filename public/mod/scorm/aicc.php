@@ -14,6 +14,15 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
+/**
+ * AICC communications endpoint.
+ * Handles AICC HACP (HTTP-based AICC/CMI Protocol) requests from an AICC package.
+ *
+ * @package    mod_scorm
+ * @copyright  1999 onwards Roberto Pinna
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
 // Prevent Caching Headers.
 header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
 header("Cache-Control: no-cache");

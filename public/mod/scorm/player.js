@@ -13,6 +13,16 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
+/**
+ * Opens a popup window for the SCORM player and calculates the size properly.
+ *
+ * @param {string} url - The URL to open.
+ * @param {string} name - The name of the window.
+ * @param {string} options - The window options.
+ * @param {number} width - The width of the window.
+ * @param {number} height - The height of the window.
+ * @returns {Window} The newly opened window.
+ */
 function scorm_openpopup(url,name,options,width,height) {
     if (width <= 100) {
         width = Math.round(screen.availWidth * width / 100);

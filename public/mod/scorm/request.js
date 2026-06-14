@@ -13,6 +13,12 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
+/**
+ * Creates a new XMLHttpRequest object for making AJAX requests.
+ * Compatible with older versions of Internet Explorer.
+ *
+ * @returns {XMLHttpRequest|boolean} The XMLHttpRequest object, or false if not supported.
+ */
 function NewHttpReq() {
     var httpReq = false;
     if (typeof XMLHttpRequest != 'undefined') {

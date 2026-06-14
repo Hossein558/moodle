@@ -16,6 +16,7 @@
 
 /**
  * Library of interface functions and constants.
+ * Manages the H5P activity module instances, tracking, and grading integrations.
  *
  * @package     mod_h5pactivity
  * @copyright   2020 Ferran Recio <ferran@moodle.com>

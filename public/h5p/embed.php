@@ -16,6 +16,7 @@
 
 /**
  * Render H5P content from an H5P file.
+ * Evaluates the URL parameter, instantiates the H5P player, and renders the content safely.
  *
  * @package    core_h5p
  * @copyright  2019 Sara Arjona <sara@moodle.com>

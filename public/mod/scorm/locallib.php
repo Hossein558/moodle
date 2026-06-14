@@ -15,7 +15,8 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Library of internal classes and functions for module SCORM
+ * Library of internal classes and functions for module SCORM.
+ * Provides specific implementations for parsing, displaying, and managing SCORM objects.
  *
  * @package    mod_scorm
  * @copyright  1999 onwards Roberto Pinna

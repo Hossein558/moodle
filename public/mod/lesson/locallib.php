@@ -17,7 +17,7 @@
 
 /**
  * Local library file for Lesson.  These are non-standard functions that are used
- * only by Lesson.
+ * only by Lesson. Contains page flow logic, branching logic, and question rendering.
  *
  * @package mod_lesson
  * @copyright 1999 onwards Martin Dougiamas  {@link http://moodle.com}

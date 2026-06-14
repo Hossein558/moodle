@@ -16,7 +16,8 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * This page prints a particular instance of lesson
+ * This page prints a particular instance of lesson.
+ * Displays the lesson content to the user, checks conditions/overrides, and tracks progress.
  *
  * @package mod_lesson
  * @copyright  1999 onwards Martin Dougiamas  {@link http://moodle.com}
