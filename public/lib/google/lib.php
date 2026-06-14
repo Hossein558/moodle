@@ -32,9 +32,13 @@ require_once($CFG->libdir . '/google/curlio.php');
 /**
  * Wrapper to get a Google Client object.
  *
- * This automatically sets the config to Moodle's defaults.
+ * This automatically sets the config to Moodle's defaults, including:
+ * - Setting the application name using the current Moodle release version.
+ * - Enforcing the use of Moodle's custom cURL IO class (`moodle_google_curlio`).
+ * - Setting the cache directory to Moodle's temporary directory (`tempdir/googleapi`).
+ * - Configuring standard OAuth2 defaults (`access_type` and `approval_prompt`).
  *
- * @return Google_Client
+ * @return Google_Client An instance of Google_Client configured for Moodle.
  */
 function get_google_client() {
     global $CFG, $SITE;

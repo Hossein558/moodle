@@ -45,11 +45,15 @@ class moodle_google_curlio extends Google_IO_Curl {
     private $options = array();
 
     /**
-     * Send the request via our curl object.
+     * Send the request via our Moodle curl object.
      *
-     * @param curl $curl prepared curl object.
-     * @param Google_HttpRequest $request The request.
-     * @return string result of the request.
+     * This helper function maps the HTTP request method specified in the `Google_HttpRequest`
+     * to the corresponding method in Moodle's `curl` class (`post`, `get`, `head`, `put`).
+     *
+     * @param curl $curl Prepared Moodle curl object.
+     * @param Google_HttpRequest $request The Google API request.
+     * @return string The raw response body from the request.
+     * @throws coding_exception If the request method is unknown.
      */
     private function do_request($curl, $request) {
         $url = $request->getUrl();
@@ -77,13 +81,14 @@ class moodle_google_curlio extends Google_IO_Curl {
     /**
      * Execute an API request.
      *
-     * This is a copy/paste from the parent class that uses Moodle's implementation
-     * of curl. Portions have been removed or altered.
+     * This is an override of the parent class implementation to use Moodle's native
+     * `curl` class instead of the standard PHP cURL functions. This ensures that
+     * all requests made by the Google API client respect Moodle's proxy settings,
+     * timeout configurations, and security policies.
      *
-     * @param Google_Http_Request $request the http request to be executed
-     * @return Google_Http_Request http request with the response http code, response
-     * headers and response body filled in
-     * @throws Google_IO_Exception on curl or IO error
+     * @param Google_Http_Request $request The HTTP request to be executed.
+     * @return array An array containing the response body, response headers, and response HTTP code.
+     * @throws Google_IO_Exception On cURL or IO error.
      */
     public function executeRequest(Google_Http_Request $request) {
         $curl = new curl();
@@ -133,11 +138,12 @@ class moodle_google_curlio extends Google_IO_Curl {
     }
 
     /**
-     * Set curl options.
+     * Set cURL options.
      *
      * We overwrite this method to ensure that the data passed meets
-     * the requirement of our curl implementation and so that the keys
-     * are strings, and not curl constants.
+     * the requirements of Moodle's `curl` class implementation. Specifically,
+     * it ensures that the option keys are strings (e.g., 'CURLOPT_TIMEOUT')
+     * rather than integer cURL constants, as Moodle's `curl::setopt()` expects string keys.
      *
      * @param array $optparams Multiple options used by a cURL session.
      * @return void
