@@ -15,7 +15,11 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Class to manage tag collections
+ * Class to manage tag collections.
+ *
+ * Tag collections organize tags into distinct sets (e.g., "Default collection").
+ * This separation allows different parts of Moodle to use different, isolated groups
+ * of tags, preventing tag namespaces from overlapping where they shouldn't.
  *
  * @package   core_tag
  * @copyright 2015 Marina Glancy

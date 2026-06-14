@@ -28,6 +28,9 @@ defined('MOODLE_INTERNAL') || die();
 /**
  * Contains the favourite class, each instance being a representation of a DB row for the 'favourite' table.
  *
+ * This entity class represents a single favorite record, linking a specific user to a specific item
+ * within a context in Moodle. It acts as the primary data transfer object within the favorites subsystem.
+ *
  * @copyright 2018 Jake Dallimore <jrhdallimore@gmail.com>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */

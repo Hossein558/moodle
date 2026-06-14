@@ -23,7 +23,11 @@
  */
 
 /**
- * Web service documentation renderer extending the plugin_renderer_base class.
+ * RSS Renderer extending the plugin_renderer_base class.
+ *
+ * Responsible for outputting UI elements related to RSS functionality,
+ * such as the RSS feed link icons and user token reset confirmations.
+ *
  * @package    core_rss
  * @category   rss
  * @copyright  2010 Andrew Davis
