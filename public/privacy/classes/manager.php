@@ -18,6 +18,11 @@
  * This file contains the core_privacy\manager class.
  *
  * @package core_privacy
+ * Segment 4: Enrollment & Privacy
+ * This manager is the core of the GDPR and privacy API implementations.
+ * It manages data export and erasure requests, collating privacy data
+ * from various Moodle components through specific provider interfaces.
+ *
  * @copyright 2018 Jake Dallimore <jrhdallimore@gmail.com>
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
