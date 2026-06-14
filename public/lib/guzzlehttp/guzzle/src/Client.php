@@ -13,6 +13,10 @@ use Psr\Http\Message\UriInterface;
 
 /**
  * @final
+ *
+ * Moodle Integration: Represents the primary Guzzle HTTP client.
+ * Moodle utilizes this client throughout its core and plugins for making
+ * robust, feature-rich outbound HTTP requests (e.g., web services, external APIs).
  */
 class Client implements ClientInterface, \Psr\Http\Client\ClientInterface
 {
