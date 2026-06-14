@@ -26,11 +26,27 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+/**
+ * Class textarea_texteditor
+ *
+ * Implements a failsafe, standard HTML textarea based editor.
+ */
 class textarea_texteditor extends texteditor {
+    /**
+     * Determines whether the browser supports this editor.
+     * Textarea is universally supported.
+     *
+     * @return bool True
+     */
     public function supported_by_browser() {
         return true;
     }
 
+    /**
+     * Returns the array of text formats supported by this editor.
+     *
+     * @return array Array mapping format constants to themselves
+     */
     public function get_supported_formats() {
         return array(FORMAT_HTML     => FORMAT_HTML,
                      FORMAT_MOODLE   => FORMAT_MOODLE,
@@ -39,14 +55,32 @@ class textarea_texteditor extends texteditor {
                     );
     }
 
+    /**
+     * Returns the preferred text format for this editor.
+     *
+     * @return int The preferred format constant
+     */
     public function get_preferred_format() {
         return FORMAT_MOODLE;
     }
 
+    /**
+     * Determines if this editor supports repositories (file picking).
+     *
+     * @return bool True if it supports repositories
+     */
     public function supports_repositories() {
         return true;
     }
 
+    /**
+     * Sets up the editor for a specific element.
+     * For a plain textarea, there is no special initialization needed.
+     *
+     * @param string $elementid The ID of the element to turn into an editor
+     * @param array|null $options Additional editor options
+     * @param mixed $fpoptions File picker options
+     */
     public function use_editor($elementid, ?array $options=null, $fpoptions=null) {
         return;
     }
