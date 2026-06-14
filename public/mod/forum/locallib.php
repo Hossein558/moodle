@@ -373,6 +373,11 @@ class forum_portfolio_caller extends portfolio_module_caller_base {
         }
     }
 
+    /**
+     * Get the expected time for the portfolio transfer.
+     *
+     * @return int
+     */
     function expected_time() {
         $filetime = $this->expected_time_file();
         if ($this->posts) {
