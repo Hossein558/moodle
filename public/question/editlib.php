@@ -32,6 +32,13 @@ require_once($CFG->libdir . '/questionlib.php');
 define('DEFAULT_QUESTIONS_PER_PAGE', 100);
 define('MAXIMUM_QUESTIONS_PER_PAGE', 4000);
 
+/**
+ * Retrieves the module record and course module record from a given course module ID (cmid).
+ *
+ * @param int $cmid The course module ID.
+ * @return array An array containing the module record and the course module record.
+ * @throws moodle_exception if the course module is invalid or not found.
+ */
 function get_module_from_cmid($cmid) {
     global $CFG, $DB;
     if (!$cmrec = $DB->get_record_sql("SELECT cm.*, md.name as modname
@@ -417,7 +424,10 @@ function question_set_or_get_user_preference($name, $value, $default, $thispageu
 }
 
 /**
- * Make sure user is logged in as required in this context.
+ * Ensures the user is logged in as required for the given context.
+ *
+ * @param context|int|null $contextorid The context or context ID to check against.
+ * @throws moodle_exception if the user cannot be logged in or the context is invalid.
  */
 function require_login_in_context($contextorid = null){
     global $DB, $CFG;
