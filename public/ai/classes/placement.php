@@ -17,7 +17,11 @@
 namespace core_ai;
 
 /**
- * Class placement.
+ * Base class for AI placements.
+ *
+ * A placement represents a specific location or context within Moodle where AI features
+ * are utilized (e.g., the HTML editor). Placements define which actions they support
+ * and how AI responses are integrated into their respective user interfaces.
  *
  * @package    core_ai
  * @copyright  2024 Matt Porritt <matt.porritt@moodle.com>

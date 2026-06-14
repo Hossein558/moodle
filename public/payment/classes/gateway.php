@@ -27,6 +27,10 @@ namespace core_payment;
 /**
  * Base class for payment gateways.
  *
+ * Payment gateway plugins (such as PayPal or Stripe) must extend this class.
+ * It outlines the required functionalities for validating gateway configurations
+ * and declaring supported currencies.
+ *
  * @copyright  2019 Shamim Rezaie <shamim@moodle.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */

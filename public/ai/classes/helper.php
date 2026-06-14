@@ -19,6 +19,9 @@ namespace core_ai;
 /**
  * AI helper class.
  *
+ * Provides utility functions for formatting and processing AI-generated
+ * content. For instance, parsing reasoning tags and normalizing output formats.
+ *
  * @package    core_ai
  * @copyright  2026 Muhammad Arnaldo <muhammad.arnaldo@moodle.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
