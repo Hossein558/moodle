@@ -34,6 +34,14 @@ defined('MOODLE_INTERNAL') || die();
  *
  * @return bool
  */
+/**
+ * Adds nodes to myprofile navigation.
+ *
+ * @param \core_user\output\myprofile\tree $tree Tree object
+ * @param \stdClass $user User object
+ * @param bool $iscurrentuser Is current user
+ * @param \stdClass $course Course object
+ */
 function core_badges_myprofile_navigation(\core_user\output\myprofile\tree $tree, $user, $iscurrentuser, $course) {
     global $CFG, $PAGE, $USER, $SITE;
     require_once($CFG->dirroot . '/badges/renderer.php');
@@ -86,6 +94,17 @@ function core_badges_myprofile_navigation(\core_user\output\myprofile\tree $tree
  * @param bool $rec search in subcontexts as well
  * @param int $page 0-based number of page being displayed
  * @return \core_tag\output\tagindex
+ */
+/**
+ * Gets tagged badges.
+ *
+ * @param \stdClass $tag Tag object
+ * @param bool $exclusivemode Exclusive mode
+ * @param int|null $fromctx From context
+ * @param int|null $ctx Context
+ * @param bool $rec Record
+ * @param int $page Page
+ * @return object Array of badges
  */
 function badge_get_tagged_badges(object $tag, bool $exclusivemode = false, null|int $fromctx = 0, null|int $ctx = 0,
                                  bool $rec = true, int $page = 0): object {

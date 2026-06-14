@@ -41,6 +41,15 @@ use stdClass;
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  * @author     Yuliya Bozhko <yuliya.bozhko@totaralms.com>
  */
+/**
+ * Class representing a badge entity.
+ *
+ * Handles badge creation, modification, checking criteria, and issuing the badge.
+ *
+ * @package    core_badges
+ * @copyright  2024
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 class badge {
     /** @var int Badge id */
     public $id;
@@ -325,6 +334,11 @@ class badge {
      *
      * @return boolean A status indicating badge is active
      */
+    /**
+     * Checks if the badge is active.
+     *
+     * @return bool True if active
+     */
     public function is_active() {
         if (($this->status == BADGE_STATUS_ACTIVE) ||
             ($this->status == BADGE_STATUS_ACTIVE_LOCKED)) {
@@ -488,6 +502,11 @@ class badge {
      *
      * @return int Number of awards
      */
+    /**
+     * Reviews all criteria to see if the badge can be awarded.
+     *
+     * @return bool True if awarded
+     */
     public function review_all_criteria() {
         global $DB, $CFG;
         $awards = 0;
@@ -588,6 +607,11 @@ class badge {
      *
      * @return boolean A status indicating badge has at least one criterion
      */
+    /**
+     * Checks if the badge has any criteria.
+     *
+     * @return bool True if criteria exist
+     */
     public function has_criteria() {
         if (count($this->criteria) > 0) {
             return true;
@@ -599,6 +623,11 @@ class badge {
      * Returns badge award criteria
      *
      * @return array An array of badge criteria
+     */
+    /**
+     * Gets the badge criteria.
+     *
+     * @return array Array of award_criteria
      */
     public function get_criteria() {
         global $DB;

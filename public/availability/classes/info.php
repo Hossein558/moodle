@@ -74,6 +74,11 @@ abstract class info {
      *
      * @return \stdClass Moodle course object
      */
+    /**
+     * Gets the course object.
+     *
+     * @return \stdClass Course object
+     */
     public function get_course() {
         return $this->course;
     }
@@ -82,6 +87,11 @@ abstract class info {
      * Gets context used for checking capabilities for this item.
      *
      * @return \context Context for this item
+     */
+    /**
+     * Gets context.
+     *
+     * @return \context Context
      */
     abstract public function get_context();
 
@@ -104,6 +114,11 @@ abstract class info {
 
     /**
      * Gets the availability tree, decoding it if not already done.
+     *
+     * @return tree Availability tree
+     */
+    /**
+     * Gets the availability tree.
      *
      * @return tree Availability tree
      */
@@ -224,6 +239,11 @@ abstract class info {
      * anyone.
      *
      * @return bool True if activity is available for all
+     */
+    /**
+     * Checks whether this activity is going to be available for all users.
+     *
+     * @return bool True if available for all
      */
     public function is_available_for_all() {
         global $CFG;
@@ -808,6 +828,13 @@ abstract class info {
      * @param int $groupingid Grouping ID or 0 (default) for all groups
      * @param int $userid User ID or 0 (default) for current user
      * @return int[] Array of int (group id) => int (same group id again); empty array if none
+     */
+    /**
+     * Gets the user groups.
+     *
+     * @param int $groupingid Grouping ID
+     * @param int $userid User ID
+     * @return array Array of groups
      */
     public function get_groups(int $groupingid = 0, int $userid = 0): array {
         global $USER;
