@@ -32,6 +32,11 @@ defined('MOODLE_INTERNAL') || die();
  * This class provides a targeted tied together means of interfacing the enrolment
  * tasks together with a course.
  *
+ * Segment 4: Enrollment & Privacy
+ * This manager class acts as the central point for managing enrollments
+ * for a specific course, interacting with various enrollment plugins
+ * (manual, self, cohort, etc.) defined in the enrol/ directory.
+ *
  * It is provided as a convenience more than anything else.
  *
  * @copyright 2010 Sam Hemelryk
