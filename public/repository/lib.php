@@ -487,6 +487,10 @@ class repository_type implements cacheable_object {
 /**
  * This is the base class of the repository class.
  *
+ * All repository plugins (e.g. Google Drive, Dropbox, File System) must extend this class.
+ * It defines the abstract methods required to fetch files from external sources,
+ * authenticate users, and interact with the Moodle File Picker.
+ *
  * To create repository plugin, see: {@link https://moodledev.io/docs/apis/plugintypes/repository}
  * See an example: repository_dropbox
  *
@@ -582,7 +586,9 @@ abstract class repository implements cacheable_object {
     /**
      * Get repository instance using repository id
      *
-     * Note that this function does not check permission to access repository contents
+     * Fetches the repository instance configuration from the database and instantiates
+     * the corresponding repository plugin class.
+     * Note that this function does not check permission to access repository contents.
      *
      * @throws repository_exception
      *
@@ -2846,6 +2852,9 @@ abstract class repository implements cacheable_object {
 
 /**
  * Exception class for repository api
+ *
+ * Thrown when an error occurs while interacting with a repository (e.g., authentication failures,
+ * file not found on remote server, plugin configuration errors).
  *
  * @since Moodle 2.0
  * @package   core_repository

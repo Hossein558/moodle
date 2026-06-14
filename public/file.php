@@ -57,10 +57,11 @@ $courseid = (int)array_shift($args);
 $relativepath = implode('/', $args);
 
 // security: limit access to existing course subdirectories
+// Fetch the course from DB and ensure it exists.
 $course = $DB->get_record('course', array('id'=>$courseid), '*', MUST_EXIST);
 
 if ($course->legacyfiles != 2) {
-    // course files disabled
+    // course files disabled - legacy files (from Moodle 1.9) are not permitted in this course.
     send_file_not_found();
 }
 
@@ -77,12 +78,16 @@ if ($course->id != SITEID) {
     }
 }
 
+// Load the context for the requested course.
 $context = context_course::instance($course->id);
 
 $fs = get_file_storage();
 
+// Construct the full path representation used to compute the SHA-1 hash in the file storage.
+// Legacy files always belong to the 'course' component, 'legacy' file area, and itemid 0.
 $fullpath = "/$context->id/course/legacy/0/$relativepath";
 
+// Attempt to retrieve the file from storage using its SHA-1 hash.
 if (!$file = $fs->get_file_by_hash(sha1($fullpath))) {
     if (strrpos($fullpath, '/') !== strlen($fullpath) -1 ) {
         $fullpath .= '/';
@@ -92,7 +97,7 @@ if (!$file = $fs->get_file_by_hash(sha1($fullpath))) {
         send_file_not_found();
     }
 }
-// do not serve dirs
+// do not serve dirs - try to resolve index files (like index.html) instead.
 if ($file->get_filename() == '.') {
     if (!$file = $fs->get_file_by_hash(sha1($fullpath.'index.html'))) {
         if (!$file = $fs->get_file_by_hash(sha1($fullpath.'index.htm'))) {
@@ -107,6 +112,7 @@ if ($file->get_filename() == '.') {
 // finally send the file
 // ========================================
 \core\session\manager::write_close(); // Unlock session during file serving.
+// Send the found file to the browser, with optional download enforcement.
 send_stored_file($file, null, $CFG->filteruploadedfiles, $forcedownload);
 
 

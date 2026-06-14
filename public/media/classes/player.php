@@ -28,7 +28,8 @@ defined('MOODLE_INTERNAL') || die();
  * Base class for media players.
  *
  * Media players return embed HTML for a particular way of playing back audio
- * or video (or another file type).
+ * or video (or another file type). All specific media players (e.g. VideoJS,
+ * native HTML5) must extend this class and implement the embed() method.
  *
  * @package   core_media
  * @copyright 2016 Marina Glancy
@@ -64,7 +65,7 @@ abstract class core_media_player {
      * The $options array contains key-value pairs. See OPTION_xx constants
      * for documentation of standard option(s).
      *
-     * @param array $urls URLs of media files
+     * @param array $urls URLs of media files (array of moodle_url)
      * @param string $name Display name; '' to use default
      * @param int $width Optional width; 0 to use default
      * @param int $height Optional height; 0 to use default
