@@ -1,3 +1,5 @@
+# Workflow for core build processes including Grunt builds, Jest tests, and PHPUnit suites.
+# Triggered on branches and manual dispatches to ensure CI stability across platforms.
 name: Core
 
 on:

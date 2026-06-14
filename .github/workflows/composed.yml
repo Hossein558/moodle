@@ -1,3 +1,5 @@
+# Workflow to run tests in a Composed Moodle Setup, primarily for testing Docker configurations.
+# Executes tests against various database environments.
 name: Run tests in a Composed Moodle Setup
 
 on:

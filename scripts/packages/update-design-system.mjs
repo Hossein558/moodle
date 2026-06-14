@@ -24,6 +24,14 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { copyFromNodeModules, getPackageVersion, getRootDir } from '../lib/util.mjs';
 
+/**
+ * Initializes the update process for the @moodlehq/design-system package.
+ * This function locates the current root directory, retrieves the desired version of the design system
+ * from package dependencies, and copies necessary distribution files and SCSS tokens to Moodle's bundle directory.
+ * It also manages the update of third-party library descriptions.
+ *
+ * @returns {Promise<void>} Resolves when the update process completes.
+ */
 export async function init() {
     const rootDir = getRootDir();
     const version = getPackageVersion('@moodlehq/design-system');

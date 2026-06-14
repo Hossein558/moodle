@@ -33,6 +33,11 @@ const setupMoodleEnvironment = grunt => {
     const path = require('path');
     const ComponentList = require(path.join(process.cwd(), '.grunt', 'components.js'));
 
+    /**
+     * Determines the AMD source globbing patterns based on the current context (component or root).
+     *
+     * @returns {Object} An object containing `inAMD` (boolean) and `amdSrc` (array of glob paths).
+     */
     const getAmdConfiguration = () => {
         // If the cwd is the amd directory in the current component then it will be empty.
         // If the cwd is a child of the component's AMD directory, the relative directory will not start with ..
@@ -55,6 +60,11 @@ const setupMoodleEnvironment = grunt => {
         };
     };
 
+    /**
+     * Determines the YUI source globbing patterns based on the current context.
+     *
+     * @returns {Object} An object containing `yuiSrc` (array of glob paths).
+     */
     const getYuiConfiguration = () => {
         let yuiSrc = [];
         if (inComponent) {
@@ -68,6 +78,11 @@ const setupMoodleEnvironment = grunt => {
         };
     };
 
+    /**
+     * Determines the CSS and SCSS source globbing patterns based on the current context.
+     *
+     * @returns {Object} An object containing `cssSrc` and `scssSrc` arrays of glob paths.
+     */
     const getStyleConfiguration = () => {
         const ComponentList = require(path.join(process.cwd(), '.grunt', 'components.js'));
         // Build the cssSrc and scssSrc.
@@ -140,6 +155,11 @@ const setupMoodleEnvironment = grunt => {
         return cwd;
     };
 
+    /**
+     * Determines the React TypeScript source globbing patterns based on the current context.
+     *
+     * @returns {Array<string>} An array of glob paths matching React TypeScript source files.
+     */
     const getReactTsConfiguration = () => {
         // Globbing pattern for matching all react source files.
         if (inComponent) {

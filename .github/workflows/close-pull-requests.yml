@@ -1,3 +1,5 @@
+# Workflow to automatically close pull requests created in the main repository.
+# Moodle's development process utilizes Jira, so direct pull requests on GitHub are not accepted.
 name: 'Close Pull Requests'
 
 on:

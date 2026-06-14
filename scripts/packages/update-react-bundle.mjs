@@ -24,6 +24,13 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { downloadFromEsmSh, getPackageVersion, getRootDir } from '../lib/util.mjs';
 
+/**
+ * Initializes the update process for the React and React-DOM packages.
+ * Retrieves version requirements for React from package configurations and downloads the required
+ * bundles (including dev environments) from esm.sh. Also updates the relevant third-party library tracking documents.
+ *
+ * @returns {Promise<void>} Resolves when the update process completes.
+ */
 export async function init() {
     const rootDir = getRootDir();
     const reactVersion = getPackageVersion('react');
