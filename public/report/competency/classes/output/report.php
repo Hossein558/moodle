@@ -42,6 +42,8 @@ use core_course\external\course_summary_exporter;
 /**
  * Class containing data for learning plan template competencies page
  *
+ * Acts as a renderable component for exporting competency data to a template.
+ *
  * @copyright  2015 Damyon Wiese
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */

@@ -29,6 +29,8 @@ use core_reportbuilder\exception\{source_invalid_exception, source_unavailable_e
 /**
  * Report management class
  *
+ * Handles the retrieval and caching of report instances across the site.
+ *
  * @package     core_reportbuilder
  * @copyright   2020 Paul Holden <paulh@moodle.com>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later

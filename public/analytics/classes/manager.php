@@ -17,6 +17,9 @@
 /**
  * Analytics basic actions manager.
  *
+ * Provides methods to manage analytics models, get predictions processors,
+ * and list insights.
+ *
  * @package   core_analytics
  * @copyright 2017 David Monllao {@link http://www.davidmonllao.com}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -28,6 +31,9 @@ defined('MOODLE_INTERNAL') || die();
 
 /**
  * Analytics basic actions manager.
+ *
+ * Provides methods to manage analytics models, get predictions processors,
+ * and list insights.
  *
  * @package   core_analytics
  * @copyright 2017 David Monllao {@link http://www.davidmonllao.com}

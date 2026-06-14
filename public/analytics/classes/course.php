@@ -31,6 +31,8 @@ require_once($CFG->dirroot . '/lib/gradelib.php');
 require_once($CFG->dirroot . '/lib/enrollib.php');
 
 /**
+ * Represents a Moodle course as an analysable entity.
+ *
  * Moodle course analysable
  *
  * @package   core_analytics
@@ -225,6 +227,8 @@ class course implements \core_analytics\analysable {
     }
 
     /**
+ * Returns the course name.
+ *
      * The course short name
      *
      * @return string

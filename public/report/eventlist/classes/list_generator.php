@@ -15,6 +15,8 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Utility class for generating the list of system events.
+ *
  * Class for returning system event information.
  *
  * @package   report_eventlist

@@ -29,6 +29,8 @@ defined('MOODLE_INTERNAL') || die();
 /**
  * Prediction model representation.
  *
+ * Encapsulates the logic of an analytics model, connecting targets and indicators.
+ *
  * @package   core_analytics
  * @copyright 2016 David Monllao {@link http://www.davidmonllao.com}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
