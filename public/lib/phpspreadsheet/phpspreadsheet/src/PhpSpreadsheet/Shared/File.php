@@ -113,6 +113,8 @@ class File
     public static function sysGetTempDir(): string
     {
         // Moodle hack!
+        // Uses Moodle's make_temp_directory function to ensure temporary files are stored
+        // within Moodle's designated dataroot temporary folder structure.
         if (function_exists('make_temp_directory')) {
             $temp = make_temp_directory('phpspreadsheet');
             return realpath(dirname($temp));
