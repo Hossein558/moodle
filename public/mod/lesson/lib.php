@@ -17,6 +17,7 @@
 
 /**
  * Standard library of functions and constants for lesson
+ * Contains APIs for creating, updating, and deleting lessons, as well as handling events.
  *
  * @package mod_lesson
  * @copyright  1999 onwards Martin Dougiamas  {@link http://moodle.com}

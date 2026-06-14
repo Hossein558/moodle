@@ -15,7 +15,8 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Callbacks.
+ * Core H5P subsystem callbacks and utility functions.
+ * Handles the integration with the third-party H5P library and file serving.
  *
  * @package    core_h5p
  * @copyright  2019 Bas Brands <bas@moodle.com>
