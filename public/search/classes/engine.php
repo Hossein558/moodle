@@ -17,7 +17,10 @@
 /**
  * Base class for search engines.
  *
- * All search engines must extend this class.
+ * All underlying search engines (e.g., Solr, SimpleDB) must extend this abstract class.
+ * This class defines the contract for search engine plugins, including methods for indexing documents,
+ * executing search queries, managing batches, and optimizing or deleting indexed data.
+ * It provides standard interfaces that Moodle's search manager uses to interact with different indexing backends.
  *
  * @package   core_search
  * @copyright 2015 Daniel Neis
