@@ -52,6 +52,15 @@ defined('MOODLE_INTERNAL') || die();
  * @copyright 2014 The Open University
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+/**
+ * Base class for a single availability condition.
+ *
+ * All condition types must extend this class.
+ *
+ * @package core_availability
+ * @copyright 2024
+ * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 abstract class condition extends tree_node {
 
     /**

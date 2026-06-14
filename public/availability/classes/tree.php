@@ -51,6 +51,13 @@ defined('MOODLE_INTERNAL') || die();
  * @copyright 2014 The Open University
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+/**
+ * Tree node representing a logical combination of conditions.
+ *
+ * @package core_availability
+ * @copyright 2024
+ * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 class tree extends tree_node {
     /** @var int Operator: AND */
     const OP_AND = '&';

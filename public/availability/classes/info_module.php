@@ -33,6 +33,13 @@ defined('MOODLE_INTERNAL') || die();
  * @copyright 2014 The Open University
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+/**
+ * Class handles conditional availability information for an activity module.
+ *
+ * @package    core_availability
+ * @copyright  2024
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 class info_module extends info {
     /** @var \cm_info Activity. */
     protected $cm;
