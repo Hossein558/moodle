@@ -27,6 +27,10 @@ namespace core_group;
 
 /**
  * Group visibility methods.
+ *
+ * This class provides utility methods to handle group visibility logic.
+ * It helps determine whether groups or their memberships should be visible
+ * based on user capabilities, group settings, and database caching.
  */
 class visibility {
 

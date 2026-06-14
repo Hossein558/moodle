@@ -37,6 +37,9 @@ use core_privacy\local\request\approved_userlist;
 /**
  * Privacy class for requesting user data.
  *
+ * This class acts as the privacy provider for cohorts. It defines how user
+ * cohort membership data is exported or deleted in response to privacy API requests.
+ *
  * @copyright  2018 Sara Arjona <sara@moodle.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
