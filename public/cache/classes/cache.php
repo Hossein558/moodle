@@ -22,9 +22,13 @@ use stdClass;
 /**
  * The main cache class.
  *
- * This class if the first class that any end developer will interact with.
- * In order to create an instance of a cache that they can work with they must call one of the static make methods belonging
- * to this class.
+ * This class is the primary entry point for any developer interacting with the Moodle Universal Cache (MUC).
+ * In order to create an instance of a cache that they can work with, they must call one of the static make methods
+ * belonging to this class (e.g., `make` or `make_from_params`).
+ *
+ * MUC acts as an abstraction layer, allowing Moodle to transparently store and retrieve data across multiple
+ * backend cache stores (like Redis, Memcached, APCu, or File) depending on the administrator's configuration,
+ * without exposing the underlying storage mechanisms to the caller.
  *
  * @package    core_cache
  * @category   cache

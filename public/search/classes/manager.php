@@ -17,6 +17,13 @@
 /**
  * Search subsystem manager.
  *
+ * The `manager` class acts as the primary facade and coordinator for Moodle's global search engine subsystem.
+ * It manages the lifecycle of indexing documents across various search areas (like courses, users, and activities),
+ * processes search queries by delegating to the configured underlying search engine (e.g., Solr), and handles
+ * the orchestration of search components (document factories, area categories, etc.).
+ *
+ * Use `\core_search\manager::instance()` to interact with the search subsystem.
+ *
  * @package   core_search
  * @copyright Prateek Sachan {@link http://prateeksachan.com}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
