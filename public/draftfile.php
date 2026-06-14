@@ -57,15 +57,18 @@ $component = array_shift($args);
 $filearea  = array_shift($args);
 $draftid   = (int)array_shift($args);
 
+// Draft files must be served from the 'user' component and 'draft' filearea.
 if ($component !== 'user' or $filearea !== 'draft') {
     send_file_not_found();
 }
 
+// Validate that the request context is a user context.
 $context = context::instance_by_id($contextid);
 if ($context->contextlevel != CONTEXT_USER) {
     send_file_not_found();
 }
 
+// Ensure the requested draft file belongs to the currently logged-in user.
 $userid = $context->instanceid;
 if ($USER->id != $userid) {
     throw new \moodle_exception('invaliduserid');
@@ -75,8 +78,10 @@ if ($USER->id != $userid) {
 $fs = get_file_storage();
 
 $relativepath = implode('/', $args);
+// Construct the full path representation used to compute the SHA-1 hash for draft files.
 $fullpath = "/$context->id/user/draft/$draftid/$relativepath";
 
+// Retrieve the file by its hash. Reject directories (indicated by a filename of '.').
 if (!$file = $fs->get_file_by_hash(sha1($fullpath)) or $file->get_filename() == '.') {
     send_file_not_found();
 }
@@ -85,4 +90,5 @@ if (!$file = $fs->get_file_by_hash(sha1($fullpath)) or $file->get_filename() == 
 // finally send the file
 // ========================================
 \core\session\manager::write_close(); // Unlock session during file serving.
+// Send the file, forcing download for security reasons (to prevent executing arbitrary uploaded HTML/JS in browser context).
 send_stored_file($file, 0, false, true, array('preview' => $preview)); // force download - security first!

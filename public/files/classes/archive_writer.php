@@ -30,6 +30,10 @@ use core_files\local\archive_writer\stream_writer_interface as stream_writer_int
 /**
  * Each file archive type must extend this class.
  *
+ * This provides a unified interface for creating file archives (e.g., zip files).
+ * It supports both writing archives directly to the filesystem via get_file_writer()
+ * and streaming archives directly to the browser via get_stream_writer().
+ *
  * @package   core_files
  * @copyright 2020 Mark Nelson <mdjnelson@gmail.com>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later

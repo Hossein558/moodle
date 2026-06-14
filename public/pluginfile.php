@@ -47,4 +47,6 @@ $embed = optional_param('embed', 0, PARAM_BOOL);
 // error if $PAGE->url is not defined.
 $PAGE->set_url(new \moodle_url($FULLME));
 
+// Delegate the actual file serving to the component's file callback via file_pluginfile().
+// The callback will check permissions and output the file or redirect to the external source.
 file_pluginfile($relativepath, $forcedownload, $preview, $offline, $embed);
