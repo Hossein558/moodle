@@ -1,6 +1,12 @@
 <?php
 
-// This file defines settingpages and externalpages under the "appearance" category
+/**
+ * This file defines settingpages and externalpages under the "appearance" category.
+ *
+ * It manages settings related to the visual appearance of the Moodle site, including logos,
+ * colors, custom CSS, and other theme-related configurations. These settings are accessible
+ * via the Site administration -> Appearance menu.
+ */
 
 $ADMIN->add('appearance', new admin_category('themes', new lang_string('themesettingscustom', 'admin')));
 

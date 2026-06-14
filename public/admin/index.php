@@ -17,6 +17,10 @@
 /**
  * Main administration script.
  *
+ * This file serves as the main entry point for the Moodle administration dashboard.
+ * It checks the installation status, minimum PHP requirements, and required PHP extensions
+ * (such as iconv, xml, and mbstring) before rendering the site administration settings and features.
+ *
  * @package    core
  * @copyright  1999 onwards Martin Dougiamas (http://dougiamas.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later

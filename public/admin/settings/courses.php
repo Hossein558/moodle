@@ -15,7 +15,11 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * This file defines settingpages and externalpages under the "courses" category
+ * This file defines settingpages and externalpages under the "courses" category.
+ *
+ * It manages global settings related to courses, including course defaults,
+ * course creation settings, enrolment configurations, and course formatting options.
+ * These settings are accessible via the Site administration -> Courses menu.
  *
  * @package core
  * @copyright 2002 onwards Martin Dougiamas (http://dougiamas.com)
