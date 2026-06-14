@@ -17,6 +17,11 @@
 /**
  * classic config.
  *
+ * Segment 11: Blocks & Themes
+ * The Classic theme provides a traditional Moodle look and feel with multi-column
+ * layouts (e.g. side-pre and side-post for blocks). It is a child theme of Boost,
+ * overriding various configurations to restore the legacy 3-column paradigm.
+ *
  * @package   theme_classic
  * @copyright 2018 Bas Brands
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
