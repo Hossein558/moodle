@@ -23,7 +23,19 @@
 import {requireAsync, requireManyAsync} from '@moodle/lms/core/amd';
 
 declare global {
+    /**
+     * Registers a mocked version of an AMD module.
+     * @param {string} moduleName The name of the AMD module to mock.
+     * @param {object} module The mock object to return for this module.
+     */
     function mockAmdModule(moduleName: string, module: object): void;
+
+    /**
+     * Registers a mocked localization string for tests.
+     * @param {string} identifier The string identifier.
+     * @param {string} component The component name.
+     * @param {string} resolved The resolved string value to return.
+     */
     function mockString(identifier: string, component: string, resolved: string): void;
 }
 

@@ -55,6 +55,12 @@ const getAvailablePackages = () =>
             file: path.join(packagesDir, f),
         }));
 
+/**
+ * Executes the update scripts for the specified packages or all available packages.
+ *
+ * @param {Array<string>} names An array of package names to update. If empty, all available packages will be updated.
+ * @returns {Promise<void>} Resolves when all updates have completed successfully.
+ */
 async function updatePackages(names) {
     const available = getAvailablePackages();
 
@@ -83,6 +89,9 @@ async function updatePackages(names) {
     console.log(chalk.green.bold('All packages updated successfully ✓'));
 }
 
+/**
+ * Lists all available package update scripts to the console.
+ */
 function listPackages() {
     const packages = getAvailablePackages();
     console.log(chalk.blue.bold('Available packages:\n'));

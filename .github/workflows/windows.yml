@@ -1,3 +1,5 @@
+# Workflow for running CI checks (Grunt and PHPUnit) specifically on a Windows runner.
+# Ensures cross-platform compatibility of the build and test suites.
 name: Windows Testing
 
 on:
