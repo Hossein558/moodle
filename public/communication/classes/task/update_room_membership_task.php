@@ -27,6 +27,9 @@ use core_communication\processor;
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class update_room_membership_task extends adhoc_task {
+    /**
+     * Executes the scheduled task to update room membership data.
+     */
     public function execute() {
         // Initialize the custom data operation to be used for the action.
         $data = $this->get_custom_data();

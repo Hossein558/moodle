@@ -33,6 +33,9 @@ class synchronise_providers_task extends scheduled_task {
         return get_string('synchroniseproviders', 'core_communication');
     }
 
+    /**
+     * Executes the scheduled task to synchronise data across all configured communication providers.
+     */
     public function execute() {
         // Communication is not enabled? nothing to do.
         if (!api::is_available()) {

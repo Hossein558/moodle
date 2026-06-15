@@ -73,6 +73,11 @@ class processor implements templatable, renderable {
         $this->type = $type;
     }
 
+    /**
+     * Exports the processor preferences data for rendering within a Mustache template.
+     * @param \renderer_base $output The renderer base.
+     * @return array Template context data.
+     */
     public function export_for_template(\renderer_base $output) {
         return [
             'userid' => $this->user->id,

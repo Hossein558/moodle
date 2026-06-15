@@ -33,6 +33,9 @@ use core_admin\admin_search;
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class manage_communication_providers_page extends admin_setting {
+    /**
+     * Initializes the communication providers management page in the admin settings.
+     */
     public function __construct() {
         $this->nosave = true;
         parent::__construct(

@@ -29,6 +29,9 @@ use core_communication\processor;
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class delete_room_task extends adhoc_task {
+    /**
+     * Executes the scheduled task to delete a communication room.
+     */
     public function execute() {
         $data = $this->get_custom_data();
 

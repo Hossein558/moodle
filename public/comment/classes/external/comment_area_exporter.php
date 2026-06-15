@@ -61,6 +61,10 @@ class comment_area_exporter extends \core\external\exporter {
         parent::__construct($data, $related);
     }
 
+    /**
+     * Defines the properties required by the exporter for comments.
+     * @return array List of property definitions.
+     */
     protected static function define_properties() {
         return array(
             'component' => array(
@@ -84,6 +88,10 @@ class comment_area_exporter extends \core\external\exporter {
         );
     }
 
+    /**
+     * Defines additional custom properties for the exporter.
+     * @return array List of other property definitions.
+     */
     protected static function define_other_properties() {
         return array(
             'autostart' => array(
@@ -125,6 +133,11 @@ class comment_area_exporter extends \core\external\exporter {
         );
     }
 
+    /**
+     * Retrieves the values for the other defined properties.
+     * @param \renderer_base $output The renderer base.
+     * @return array Calculated values for the other properties.
+     */
     public function get_other_values(renderer_base $output) {
         $values = array();
         $values['autostart'] = $this->comment->get_autostart();
